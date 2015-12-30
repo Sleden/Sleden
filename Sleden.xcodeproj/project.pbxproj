@@ -8,16 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		651786851C33398800D62297 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651786841C33398800D62297 /* AppDelegate.swift */; };
-		651786871C33398800D62297 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651786861C33398800D62297 /* ViewController.swift */; };
+		651786871C33398800D62297 /* LoggInnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651786861C33398800D62297 /* LoggInnViewController.swift */; };
 		6517868A1C33398800D62297 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651786881C33398800D62297 /* Main.storyboard */; };
 		6517868D1C33398800D62297 /* Sleden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6517868B1C33398800D62297 /* Sleden.xcdatamodeld */; };
 		6517868F1C33398800D62297 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6517868E1C33398800D62297 /* Assets.xcassets */; };
 		651786921C33398800D62297 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651786901C33398800D62297 /* LaunchScreen.storyboard */; };
 		6517869D1C33398900D62297 /* SledenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6517869C1C33398900D62297 /* SledenTests.swift */; };
 		651786A81C33398900D62297 /* SledenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651786A71C33398900D62297 /* SledenUITests.swift */; };
-		651786B81C3339E600D62297 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786B51C3339E600D62297 /* Bolts.framework */; };
-		651786B91C3339E600D62297 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786B61C3339E600D62297 /* Parse.framework */; };
-		651786BA1C3339E600D62297 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786B71C3339E600D62297 /* ParseUI.framework */; };
 		651786BC1C333A7C00D62297 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786BB1C333A7C00D62297 /* AudioToolbox.framework */; };
 		651786BE1C333A8600D62297 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786BD1C333A8600D62297 /* CFNetwork.framework */; };
 		651786C01C333A9000D62297 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786BF1C333A9000D62297 /* CoreGraphics.framework */; };
@@ -28,6 +25,11 @@
 		651786CA1C333ABF00D62297 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786C91C333ABF00D62297 /* SystemConfiguration.framework */; };
 		651786CC1C333AC800D62297 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786CB1C333AC800D62297 /* libz.tbd */; };
 		651786CE1C333AD300D62297 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786CD1C333AD300D62297 /* libsqlite3.tbd */; };
+		65ABB1781C3423A3002AA32D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1771C3423A3002AA32D /* Bolts.framework */; };
+		65ABB17A1C3423AA002AA32D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1791C3423AA002AA32D /* Parse.framework */; };
+		65ABB17C1C3423B7002AA32D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB17B1C3423B7002AA32D /* ParseUI.framework */; };
+		65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */; };
+		65C264C81C3416A1004B967A /* parse-library-1.11.0 in Resources */ = {isa = PBXBuildFile; fileRef = 65C264C71C3416A1004B967A /* parse-library-1.11.0 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,7 @@
 /* Begin PBXFileReference section */
 		651786811C33398800D62297 /* Sleden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		651786841C33398800D62297 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		651786861C33398800D62297 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		651786861C33398800D62297 /* LoggInnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggInnViewController.swift; sourceTree = "<group>"; };
 		651786891C33398800D62297 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6517868C1C33398800D62297 /* Sleden.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sleden.xcdatamodel; sourceTree = "<group>"; };
 		6517868E1C33398800D62297 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,9 +64,6 @@
 		651786A31C33398900D62297 /* SledenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SledenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		651786A71C33398900D62297 /* SledenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SledenUITests.swift; sourceTree = "<group>"; };
 		651786A91C33398900D62297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		651786B51C3339E600D62297 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		651786B61C3339E600D62297 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		651786B71C3339E600D62297 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		651786BB1C333A7C00D62297 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		651786BD1C333A8600D62297 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		651786BF1C333A9000D62297 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +74,11 @@
 		651786C91C333ABF00D62297 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		651786CB1C333AC800D62297 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		651786CD1C333AD300D62297 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		65ABB1771C3423A3002AA32D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.11.0/Bolts.framework"; sourceTree = "<group>"; };
+		65ABB1791C3423AA002AA32D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.11.0/Parse.framework"; sourceTree = "<group>"; };
+		65ABB17B1C3423B7002AA32D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.11.0/ParseUI.framework"; sourceTree = "<group>"; };
+		65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrerViewController.swift; sourceTree = "<group>"; };
+		65C264C71C3416A1004B967A /* parse-library-1.11.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1.11.0"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +94,11 @@
 				651786C41C333AA300D62297 /* QuartzCore.framework in Frameworks */,
 				651786C21C333A9900D62297 /* CoreLocation.framework in Frameworks */,
 				651786C01C333A9000D62297 /* CoreGraphics.framework in Frameworks */,
+				65ABB1781C3423A3002AA32D /* Bolts.framework in Frameworks */,
 				651786BE1C333A8600D62297 /* CFNetwork.framework in Frameworks */,
+				65ABB17A1C3423AA002AA32D /* Parse.framework in Frameworks */,
 				651786BC1C333A7C00D62297 /* AudioToolbox.framework in Frameworks */,
-				651786BA1C3339E600D62297 /* ParseUI.framework in Frameworks */,
-				651786B91C3339E600D62297 /* Parse.framework in Frameworks */,
-				651786B81C3339E600D62297 /* Bolts.framework in Frameworks */,
+				65ABB17C1C3423B7002AA32D /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				651786841C33398800D62297 /* AppDelegate.swift */,
-				651786861C33398800D62297 /* ViewController.swift */,
+				651786861C33398800D62297 /* LoggInnViewController.swift */,
+				65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */,
 				651786881C33398800D62297 /* Main.storyboard */,
 				6517868E1C33398800D62297 /* Assets.xcassets */,
 				651786901C33398800D62297 /* LaunchScreen.storyboard */,
@@ -171,6 +176,10 @@
 		651786CF1C333AF300D62297 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65ABB17B1C3423B7002AA32D /* ParseUI.framework */,
+				65ABB1791C3423AA002AA32D /* Parse.framework */,
+				65ABB1771C3423A3002AA32D /* Bolts.framework */,
+				65C264C71C3416A1004B967A /* parse-library-1.11.0 */,
 				651786CD1C333AD300D62297 /* libsqlite3.tbd */,
 				651786CB1C333AC800D62297 /* libz.tbd */,
 				651786C91C333ABF00D62297 /* SystemConfiguration.framework */,
@@ -181,9 +190,6 @@
 				651786BF1C333A9000D62297 /* CoreGraphics.framework */,
 				651786BD1C333A8600D62297 /* CFNetwork.framework */,
 				651786BB1C333A7C00D62297 /* AudioToolbox.framework */,
-				651786B51C3339E600D62297 /* Bolts.framework */,
-				651786B61C3339E600D62297 /* Parse.framework */,
-				651786B71C3339E600D62297 /* ParseUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				651786921C33398800D62297 /* LaunchScreen.storyboard in Resources */,
+				65C264C81C3416A1004B967A /* parse-library-1.11.0 in Resources */,
 				6517868F1C33398800D62297 /* Assets.xcassets in Resources */,
 				6517868A1C33398800D62297 /* Main.storyboard in Resources */,
 			);
@@ -323,7 +330,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6517868D1C33398800D62297 /* Sleden.xcdatamodeld in Sources */,
-				651786871C33398800D62297 /* ViewController.swift in Sources */,
+				651786871C33398800D62297 /* LoggInnViewController.swift in Sources */,
+				65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */,
 				651786851C33398800D62297 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +475,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/parse-library-1.11.0",
 				);
 				INFOPLIST_FILE = Sleden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -482,6 +491,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/parse-library-1.11.0",
 				);
 				INFOPLIST_FILE = Sleden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -557,6 +567,7 @@
 				651786AE1C33398900D62297 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		651786AF1C33398900D62297 /* Build configuration list for PBXNativeTarget "SledenTests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +576,7 @@
 				651786B11C33398900D62297 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		651786B21C33398900D62297 /* Build configuration list for PBXNativeTarget "SledenUITests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +585,7 @@
 				651786B41C33398900D62297 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
