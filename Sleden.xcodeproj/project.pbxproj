@@ -29,6 +29,7 @@
 		65ABB17A1C3423AA002AA32D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1791C3423AA002AA32D /* Parse.framework */; };
 		65ABB17C1C3423B7002AA32D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB17B1C3423B7002AA32D /* ParseUI.framework */; };
 		65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */; };
+		65ABB1801C342D01002AA32D /* menyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17F1C342D01002AA32D /* menyViewController.swift */; };
 		65C264C81C3416A1004B967A /* parse-library-1.11.0 in Resources */ = {isa = PBXBuildFile; fileRef = 65C264C71C3416A1004B967A /* parse-library-1.11.0 */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		65ABB1791C3423AA002AA32D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.11.0/Parse.framework"; sourceTree = "<group>"; };
 		65ABB17B1C3423B7002AA32D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.11.0/ParseUI.framework"; sourceTree = "<group>"; };
 		65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrerViewController.swift; sourceTree = "<group>"; };
+		65ABB17F1C342D01002AA32D /* menyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menyViewController.swift; sourceTree = "<group>"; };
 		65C264C71C3416A1004B967A /* parse-library-1.11.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1.11.0"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 				651786841C33398800D62297 /* AppDelegate.swift */,
 				651786861C33398800D62297 /* LoggInnViewController.swift */,
 				65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */,
+				65ABB17F1C342D01002AA32D /* menyViewController.swift */,
 				651786881C33398800D62297 /* Main.storyboard */,
 				6517868E1C33398800D62297 /* Assets.xcassets */,
 				651786901C33398800D62297 /* LaunchScreen.storyboard */,
@@ -332,6 +335,7 @@
 				6517868D1C33398800D62297 /* Sleden.xcdatamodeld in Sources */,
 				651786871C33398800D62297 /* LoggInnViewController.swift in Sources */,
 				65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */,
+				65ABB1801C342D01002AA32D /* menyViewController.swift in Sources */,
 				651786851C33398800D62297 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
