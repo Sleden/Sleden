@@ -14,14 +14,16 @@ class menyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        if (PFUser.currentUser()?.username == nil) {
-            performSegueWithIdentifier("loginView", sender: nil)
-        }
-        
         // Do any additional setup after loading the view.
     }
 
+    
+    override func viewDidAppear(animated: Bool) {
+        if (PFUser.currentUser()?.username == nil) {
+            performSegueWithIdentifier("loginView", sender: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

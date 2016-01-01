@@ -18,13 +18,13 @@ class LoggInnViewController: UIViewController {
     var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0,150,150)) as UIActivityIndicatorView
     
     
-    let cornerRadius = CGFloat(Float(17.0))
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.usernameLabel.layer.cornerRadius = cornerRadius
-        self.passordLabel.layer.cornerRadius = cornerRadius
+        TextViewDesigne.addDesigne(usernameLabel)
+        TextViewDesigne.addDesigne(passordLabel)
         
         // Går rett til menyen hvis brukeren allerede er logget inn.
         if (PFUser.currentUser() != nil){

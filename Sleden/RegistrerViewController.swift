@@ -23,7 +23,9 @@ class RegistrerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        TextViewDesigne.addDesigne(usernameField)
+        TextViewDesigne.addDesigne(passwordField)
+        TextViewDesigne.addDesigne(emailField)
         
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
