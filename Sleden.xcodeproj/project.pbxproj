@@ -31,6 +31,11 @@
 		65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */; };
 		65ABB1801C342D01002AA32D /* menyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17F1C342D01002AA32D /* menyViewController.swift */; };
 		65ABB1821C357845002AA32D /* TextViewDesigne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1811C357845002AA32D /* TextViewDesigne.swift */; };
+		65ABB1861C36ED42002AA32D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1851C36ED42002AA32D /* TableViewCell.swift */; };
+		65ABB18A1C36F0EE002AA32D /* FrindsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1891C36F0EE002AA32D /* FrindsTableViewController.swift */; };
+		65ABB18E1C36F364002AA32D /* GetFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB18C1C36F364002AA32D /* GetFriends.swift */; };
+		65ABB1901C36F688002AA32D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB18F1C36F688002AA32D /* User.swift */; };
+		65ABB1921C36F6F1002AA32D /* userRelationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */; };
 		65C264C81C3416A1004B967A /* parse-library-1.11.0 in Resources */ = {isa = PBXBuildFile; fileRef = 65C264C71C3416A1004B967A /* parse-library-1.11.0 */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +87,11 @@
 		65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrerViewController.swift; sourceTree = "<group>"; };
 		65ABB17F1C342D01002AA32D /* menyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menyViewController.swift; sourceTree = "<group>"; };
 		65ABB1811C357845002AA32D /* TextViewDesigne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewDesigne.swift; sourceTree = "<group>"; };
+		65ABB1851C36ED42002AA32D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		65ABB1891C36F0EE002AA32D /* FrindsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrindsTableViewController.swift; sourceTree = "<group>"; };
+		65ABB18C1C36F364002AA32D /* GetFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFriends.swift; sourceTree = "<group>"; };
+		65ABB18F1C36F688002AA32D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userRelationEnum.swift; sourceTree = "<group>"; };
 		65C264C71C3416A1004B967A /* parse-library-1.11.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1.11.0"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +161,8 @@
 				651786861C33398800D62297 /* LoggInnViewController.swift */,
 				65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */,
 				65ABB17F1C342D01002AA32D /* menyViewController.swift */,
+				65ABB1891C36F0EE002AA32D /* FrindsTableViewController.swift */,
+				65ABB1841C36ECDB002AA32D /* Modules */,
 				65ABB1831C357A06002AA32D /* Designe */,
 				651786881C33398800D62297 /* Main.storyboard */,
 				6517868E1C33398800D62297 /* Assets.xcassets */,
@@ -204,8 +216,19 @@
 			isa = PBXGroup;
 			children = (
 				65ABB1811C357845002AA32D /* TextViewDesigne.swift */,
+				65ABB1851C36ED42002AA32D /* TableViewCell.swift */,
 			);
 			name = Designe;
+			sourceTree = "<group>";
+		};
+		65ABB1841C36ECDB002AA32D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */,
+				65ABB18C1C36F364002AA32D /* GetFriends.swift */,
+				65ABB18F1C36F688002AA32D /* User.swift */,
+			);
+			name = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,10 +368,15 @@
 			files = (
 				6517868D1C33398800D62297 /* Sleden.xcdatamodeld in Sources */,
 				651786871C33398800D62297 /* LoggInnViewController.swift in Sources */,
+				65ABB1921C36F6F1002AA32D /* userRelationEnum.swift in Sources */,
 				65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */,
 				65ABB1801C342D01002AA32D /* menyViewController.swift in Sources */,
+				65ABB18E1C36F364002AA32D /* GetFriends.swift in Sources */,
 				651786851C33398800D62297 /* AppDelegate.swift in Sources */,
+				65ABB1861C36ED42002AA32D /* TableViewCell.swift in Sources */,
 				65ABB1821C357845002AA32D /* TextViewDesigne.swift in Sources */,
+				65ABB18A1C36F0EE002AA32D /* FrindsTableViewController.swift in Sources */,
+				65ABB1901C36F688002AA32D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

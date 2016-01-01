@@ -80,8 +80,10 @@ class LoggInnViewController: UIViewController {
                         print("Did log in user")
                         //self.performSegueWithIdentifier("startAppLog", sender: user)
                         
+                        self.dismissViewControllerAnimated(true, completion: nil)
                         
-                        })
+                        
+                    })
                     
                     // Setter success meldingen for fulført innlogging
                     self.presentViewController(alert, animated: true){}
@@ -89,7 +91,7 @@ class LoggInnViewController: UIViewController {
                 } else {
                     
                     // Gir feilmelding hvis brukernavnet eller passordet er feil.
-                    let alert = UIAlertController(title: "Invalide", message:"\(error!)", preferredStyle: .Alert)
+                    let alert = UIAlertController(title: "Invalide", message:"\(error!.localizedDescription)", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
                     self.presentViewController(alert, animated: true){}
                 }

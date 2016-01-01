@@ -83,7 +83,7 @@ class RegistrerViewController: UIViewController {
                 self.actInd.stopAnimating()
                 
                 if ((error) != nil){
-                    let alert = UIAlertController(title: "Invalide", message:"\(error)", preferredStyle: .Alert)
+                    let alert = UIAlertController(title: "Invalide", message:"\(error!.localizedDescription)", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
                     self.presentViewController(alert, animated: true){}
                     
