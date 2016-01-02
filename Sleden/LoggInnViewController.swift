@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class LoggInnViewController: UIViewController {
+class LoggInnViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameLabel: UITextField!
     @IBOutlet weak var passordLabel: UITextField!
@@ -38,6 +38,10 @@ class LoggInnViewController: UIViewController {
         self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         view.addSubview(self.actInd)
         
+        // Sier hvordan tekst fielden skal deligere (litt usikker på hvordan denne funker)
+        self.usernameLabel.delegate = self
+        self.passordLabel.delegate = self
+        
     }
 
     
@@ -46,9 +50,15 @@ class LoggInnViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
     
     @IBAction func loggInnButton() {
+        
+        self.view.endEditing(true)
         
         let username = self.usernameLabel.text
         let password = self.passordLabel.text
@@ -110,6 +120,8 @@ class LoggInnViewController: UIViewController {
         
         
     }
+    
+    
 
 }
 

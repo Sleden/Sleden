@@ -25,9 +25,6 @@
 		651786CA1C333ABF00D62297 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786C91C333ABF00D62297 /* SystemConfiguration.framework */; };
 		651786CC1C333AC800D62297 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786CB1C333AC800D62297 /* libz.tbd */; };
 		651786CE1C333AD300D62297 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786CD1C333AD300D62297 /* libsqlite3.tbd */; };
-		65ABB1781C3423A3002AA32D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1771C3423A3002AA32D /* Bolts.framework */; };
-		65ABB17A1C3423AA002AA32D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1791C3423AA002AA32D /* Parse.framework */; };
-		65ABB17C1C3423B7002AA32D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB17B1C3423B7002AA32D /* ParseUI.framework */; };
 		65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */; };
 		65ABB1801C342D01002AA32D /* menyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17F1C342D01002AA32D /* menyViewController.swift */; };
 		65ABB1821C357845002AA32D /* TextViewDesigne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1811C357845002AA32D /* TextViewDesigne.swift */; };
@@ -36,7 +33,10 @@
 		65ABB18E1C36F364002AA32D /* GetFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB18C1C36F364002AA32D /* GetFriends.swift */; };
 		65ABB1901C36F688002AA32D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB18F1C36F688002AA32D /* User.swift */; };
 		65ABB1921C36F6F1002AA32D /* userRelationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */; };
-		65C264C81C3416A1004B967A /* parse-library-1.11.0 in Resources */ = {isa = PBXBuildFile; fileRef = 65C264C71C3416A1004B967A /* parse-library-1.11.0 */; };
+		65ABB1E01C3815DA002AA32D /* parse-library-1.11.0 in Resources */ = {isa = PBXBuildFile; fileRef = 65ABB1DF1C3815DA002AA32D /* parse-library-1.11.0 */; };
+		65ABB1E21C381606002AA32D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1E11C381606002AA32D /* Bolts.framework */; };
+		65ABB1E41C38160C002AA32D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1E31C38160C002AA32D /* Parse.framework */; };
+		65ABB1E61C381612002AA32D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1E51C381612002AA32D /* ParseUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,9 +81,6 @@
 		651786C91C333ABF00D62297 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		651786CB1C333AC800D62297 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		651786CD1C333AD300D62297 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		65ABB1771C3423A3002AA32D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.11.0/Bolts.framework"; sourceTree = "<group>"; };
-		65ABB1791C3423AA002AA32D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.11.0/Parse.framework"; sourceTree = "<group>"; };
-		65ABB17B1C3423B7002AA32D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.11.0/ParseUI.framework"; sourceTree = "<group>"; };
 		65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrerViewController.swift; sourceTree = "<group>"; };
 		65ABB17F1C342D01002AA32D /* menyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menyViewController.swift; sourceTree = "<group>"; };
 		65ABB1811C357845002AA32D /* TextViewDesigne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewDesigne.swift; sourceTree = "<group>"; };
@@ -92,7 +89,10 @@
 		65ABB18C1C36F364002AA32D /* GetFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFriends.swift; sourceTree = "<group>"; };
 		65ABB18F1C36F688002AA32D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userRelationEnum.swift; sourceTree = "<group>"; };
-		65C264C71C3416A1004B967A /* parse-library-1.11.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1.11.0"; sourceTree = "<group>"; };
+		65ABB1DF1C3815DA002AA32D /* parse-library-1.11.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1.11.0"; sourceTree = "<group>"; };
+		65ABB1E11C381606002AA32D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.11.0/Bolts.framework"; sourceTree = "<group>"; };
+		65ABB1E31C38160C002AA32D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.11.0/Parse.framework"; sourceTree = "<group>"; };
+		65ABB1E51C381612002AA32D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.11.0/ParseUI.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +108,11 @@
 				651786C41C333AA300D62297 /* QuartzCore.framework in Frameworks */,
 				651786C21C333A9900D62297 /* CoreLocation.framework in Frameworks */,
 				651786C01C333A9000D62297 /* CoreGraphics.framework in Frameworks */,
-				65ABB1781C3423A3002AA32D /* Bolts.framework in Frameworks */,
+				65ABB1E21C381606002AA32D /* Bolts.framework in Frameworks */,
 				651786BE1C333A8600D62297 /* CFNetwork.framework in Frameworks */,
-				65ABB17A1C3423AA002AA32D /* Parse.framework in Frameworks */,
+				65ABB1E41C38160C002AA32D /* Parse.framework in Frameworks */,
 				651786BC1C333A7C00D62297 /* AudioToolbox.framework in Frameworks */,
-				65ABB17C1C3423B7002AA32D /* ParseUI.framework in Frameworks */,
+				65ABB1E61C381612002AA32D /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,10 +194,10 @@
 		651786CF1C333AF300D62297 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				65ABB17B1C3423B7002AA32D /* ParseUI.framework */,
-				65ABB1791C3423AA002AA32D /* Parse.framework */,
-				65ABB1771C3423A3002AA32D /* Bolts.framework */,
-				65C264C71C3416A1004B967A /* parse-library-1.11.0 */,
+				65ABB1E51C381612002AA32D /* ParseUI.framework */,
+				65ABB1E31C38160C002AA32D /* Parse.framework */,
+				65ABB1E11C381606002AA32D /* Bolts.framework */,
+				65ABB1DF1C3815DA002AA32D /* parse-library-1.11.0 */,
 				651786CD1C333AD300D62297 /* libsqlite3.tbd */,
 				651786CB1C333AC800D62297 /* libz.tbd */,
 				651786C91C333ABF00D62297 /* SystemConfiguration.framework */,
@@ -339,7 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				651786921C33398800D62297 /* LaunchScreen.storyboard in Resources */,
-				65C264C81C3416A1004B967A /* parse-library-1.11.0 in Resources */,
+				65ABB1E01C3815DA002AA32D /* parse-library-1.11.0 in Resources */,
 				6517868F1C33398800D62297 /* Assets.xcassets in Resources */,
 				6517868A1C33398800D62297 /* Main.storyboard in Resources */,
 			);

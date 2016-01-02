@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class RegistrerViewController: UIViewController {
+class RegistrerViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -40,6 +40,8 @@ class RegistrerViewController: UIViewController {
     }
     
     @IBAction func registrerButoon(sender: AnyObject) {
+        
+        self.view.endEditing(true)
         
         let username = usernameField.text
         let password = passwordField.text
@@ -112,6 +114,11 @@ class RegistrerViewController: UIViewController {
 
     @IBAction func loggInnButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     
