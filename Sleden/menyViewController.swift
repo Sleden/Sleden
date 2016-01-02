@@ -19,7 +19,11 @@ class menyViewController: UIViewController {
 
     
     override func viewDidAppear(animated: Bool) {
+        
+        // Sjekker om det er en bruker som er logget inn, hvis ikke må brukeren logge inn før appen kan tas i bruk.
         if (PFUser.currentUser()?.username == nil) {
+            
+            // Sender brukeren til LOGG INN viewet
             performSegueWithIdentifier("loginView", sender: nil)
         }
     }
@@ -32,6 +36,8 @@ class menyViewController: UIViewController {
     
     
     @IBOutlet weak var logOut: UIButton!
+    
+    // Log ut knapp som logger ut brukeren og sender brukeren til LOGG INN skjermen. 
     @IBAction func logOutButton(sender: AnyObject) {
         PFUser.logOut()
         performSegueWithIdentifier("loginView", sender: nil)

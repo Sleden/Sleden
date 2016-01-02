@@ -18,19 +18,12 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
     var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0,150,150)) as UIActivityIndicatorView
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Legger til design spesifisert i TextViewDesigne klassen.
         TextViewDesigne.addDesigne(usernameLabel)
         TextViewDesigne.addDesigne(passordLabel)
-        
-        // Går rett til menyen hvis brukeren allerede er logget inn.
-        if (PFUser.currentUser() != nil){
-            print("Did log in user")
-            //self.performSegueWithIdentifier("startAppLog", sender: PFUser.currentUser())
-        }
         
         // Setter opp det spinnende hjulet
         self.actInd.center = self.view.center
@@ -50,6 +43,8 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // Gjør slik at text field forsvinner når man trykker enter. 
+    // Må også ha med UITextFieldDelegate som superclass og self.textfield.delegate = self for at det skal fungere.
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -58,12 +53,14 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loggInnButton() {
         
+        // Når log inn knappen er trykket forsvinner tastaturet!
         self.view.endEditing(true)
         
+        // Henter brukernavn og passord fra tekstfeltet
         let username = self.usernameLabel.text
         let password = self.passordLabel.text
         
-        
+        // Sjekker om brukernavnet og passordet er langt nok
         if (username?.utf16.count < 4 || password?.utf16.count < 5){
             
             // Gir feilmeding hvis brukernavnet eller passordet er for kort
@@ -113,7 +110,8 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
         
         
     }
-
+    
+    // Denne har for øyeblikket ingen funksjon, trigger overgangen i Storyboardet!
     @IBAction func registrerButton() {
         
         //self.performSegueWithIdentifier("SignInViewController", sender: self)

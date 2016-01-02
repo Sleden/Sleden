@@ -243,18 +243,11 @@
                                     <action selector="logOutButton:" destination="o2Q-V8-r4l" eventType="touchUpInside" id="nBK-Cm-YSQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8a-JW-9xo">
-                                <rect key="frame" x="20" y="269" width="280" height="30"/>
-                                <state key="normal" title="Gå til venner"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6q9-mI-vxV" firstAttribute="leading" secondItem="LYJ-aG-L6b" secondAttribute="leadingMargin" constant="4" id="59C-4i-AiZ"/>
                             <constraint firstItem="6q9-mI-vxV" firstAttribute="top" secondItem="EJz-TP-jWm" secondAttribute="bottom" constant="8" symbolic="YES" id="P3S-2f-JTs"/>
-                            <constraint firstItem="R8a-JW-9xo" firstAttribute="leading" secondItem="6q9-mI-vxV" secondAttribute="leading" id="XsP-P0-BPS"/>
-                            <constraint firstItem="R8a-JW-9xo" firstAttribute="centerX" secondItem="LYJ-aG-L6b" secondAttribute="centerX" id="j8q-h4-jA4"/>
-                            <constraint firstItem="R8a-JW-9xo" firstAttribute="centerY" secondItem="LYJ-aG-L6b" secondAttribute="centerY" id="sZf-oS-tjf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="3V9-cf-AGI"/>
