@@ -9,17 +9,17 @@
 import Foundation
 import Parse
 
-class User: PFUser {
+class User{
     
+    var username: String
     var userID: String
     var isFriend: userRelation
     
-    init(userID: String, isFriend: userRelation){
+    init(username: String, userID: String, isFriend: userRelation){
         
+        self.username = username
         self.userID = userID
         self.isFriend = isFriend
-        
-        super.init()
     }
     
     

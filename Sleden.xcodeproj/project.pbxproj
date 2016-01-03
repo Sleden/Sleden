@@ -33,12 +33,11 @@
 		65ABB18E1C36F364002AA32D /* GetFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB18C1C36F364002AA32D /* GetFriends.swift */; };
 		65ABB1901C36F688002AA32D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB18F1C36F688002AA32D /* User.swift */; };
 		65ABB1921C36F6F1002AA32D /* userRelationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */; };
-
-		65ABB1E01C3815DA002AA32D /* parse-library-1.11.0 in Resources */ = {isa = PBXBuildFile; fileRef = 65ABB1DF1C3815DA002AA32D /* parse-library-1.11.0 */; };
 		65ABB1E21C381606002AA32D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1E11C381606002AA32D /* Bolts.framework */; };
 		65ABB1E41C38160C002AA32D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1E31C38160C002AA32D /* Parse.framework */; };
 		65ABB1E61C381612002AA32D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1E51C381612002AA32D /* ParseUI.framework */; };
-
+		65ABB1E81C39416A002AA32D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1E71C39416A002AA32D /* BackgroundView.swift */; };
+		65ABB1EC1C3953DC002AA32D /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1EB1C3953DC002AA32D /* AddFriend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,12 +90,12 @@
 		65ABB18C1C36F364002AA32D /* GetFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFriends.swift; sourceTree = "<group>"; };
 		65ABB18F1C36F688002AA32D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userRelationEnum.swift; sourceTree = "<group>"; };
-
 		65ABB1DF1C3815DA002AA32D /* parse-library-1.11.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1.11.0"; sourceTree = "<group>"; };
 		65ABB1E11C381606002AA32D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.11.0/Bolts.framework"; sourceTree = "<group>"; };
 		65ABB1E31C38160C002AA32D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.11.0/Parse.framework"; sourceTree = "<group>"; };
 		65ABB1E51C381612002AA32D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.11.0/ParseUI.framework"; sourceTree = "<group>"; };
-
+		65ABB1E71C39416A002AA32D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		65ABB1EB1C3953DC002AA32D /* AddFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,16 +109,13 @@
 				651786C81C333AB400D62297 /* StoreKit.framework in Frameworks */,
 				651786C61C333AAC00D62297 /* Security.framework in Frameworks */,
 				651786C41C333AA300D62297 /* QuartzCore.framework in Frameworks */,
-				65ABB1DE1C380EE1002AA32D /* Parse.framework in Frameworks */,
 				651786C21C333A9900D62297 /* CoreLocation.framework in Frameworks */,
 				651786C01C333A9000D62297 /* CoreGraphics.framework in Frameworks */,
-
 				65ABB1E21C381606002AA32D /* Bolts.framework in Frameworks */,
 				651786BE1C333A8600D62297 /* CFNetwork.framework in Frameworks */,
 				65ABB1E41C38160C002AA32D /* Parse.framework in Frameworks */,
 				651786BC1C333A7C00D62297 /* AudioToolbox.framework in Frameworks */,
 				65ABB1E61C381612002AA32D /* ParseUI.framework in Frameworks */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,12 +197,10 @@
 		651786CF1C333AF300D62297 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-
 				65ABB1E51C381612002AA32D /* ParseUI.framework */,
 				65ABB1E31C38160C002AA32D /* Parse.framework */,
 				65ABB1E11C381606002AA32D /* Bolts.framework */,
 				65ABB1DF1C3815DA002AA32D /* parse-library-1.11.0 */,
-
 				651786CD1C333AD300D62297 /* libsqlite3.tbd */,
 				651786CB1C333AC800D62297 /* libz.tbd */,
 				651786C91C333ABF00D62297 /* SystemConfiguration.framework */,
@@ -226,6 +220,7 @@
 			children = (
 				65ABB1811C357845002AA32D /* TextViewDesigne.swift */,
 				65ABB1851C36ED42002AA32D /* TableViewCell.swift */,
+				65ABB1E71C39416A002AA32D /* BackgroundView.swift */,
 			);
 			name = Designe;
 			sourceTree = "<group>";
@@ -236,6 +231,7 @@
 				65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */,
 				65ABB18C1C36F364002AA32D /* GetFriends.swift */,
 				65ABB18F1C36F688002AA32D /* User.swift */,
+				65ABB1EB1C3953DC002AA32D /* AddFriend.swift */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -348,7 +344,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				651786921C33398800D62297 /* LaunchScreen.storyboard in Resources */,
-
 				6517868F1C33398800D62297 /* Assets.xcassets in Resources */,
 				6517868A1C33398800D62297 /* Main.storyboard in Resources */,
 			);
@@ -378,9 +373,11 @@
 				6517868D1C33398800D62297 /* Sleden.xcdatamodeld in Sources */,
 				651786871C33398800D62297 /* LoggInnViewController.swift in Sources */,
 				65ABB1921C36F6F1002AA32D /* userRelationEnum.swift in Sources */,
+				65ABB1EC1C3953DC002AA32D /* AddFriend.swift in Sources */,
 				65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */,
 				65ABB1801C342D01002AA32D /* menyViewController.swift in Sources */,
 				65ABB18E1C36F364002AA32D /* GetFriends.swift in Sources */,
+				65ABB1E81C39416A002AA32D /* BackgroundView.swift in Sources */,
 				651786851C33398800D62297 /* AppDelegate.swift in Sources */,
 				65ABB1861C36ED42002AA32D /* TableViewCell.swift in Sources */,
 				65ABB1821C357845002AA32D /* TextViewDesigne.swift in Sources */,

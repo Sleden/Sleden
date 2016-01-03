@@ -35,6 +35,8 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
         self.usernameLabel.delegate = self
         self.passordLabel.delegate = self
         
+        
+        
     }
 
     
