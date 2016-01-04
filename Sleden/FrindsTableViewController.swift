@@ -110,14 +110,30 @@ class FrindsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "tilVenn" {
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                
+                let user = GetFriendsObject.myFriends[indexPath.row]
+                
+                // Sender over objektet som tilsvarer raden som bli klikket i table viewet
+                (segue.destinationViewController as! detailVennViewController).user = user
+                
+            }
+            
+            
+        }
+        
+        
     }
-    */
+    
 
 }

@@ -13,26 +13,60 @@ class detailVennViewController: UIViewController {
     
     
     
-    let username: String?
-    let userID: String?
+    var user: User? {
+        
+        didSet {
+            
+            configureView()
+            
+        }
+        
+    }
     
     
-    @IBOutlet weak var usernameLabel: UILabel!
-    
-    @IBOutlet weak var antallSledenLabel: UILabel!
-    @IBOutlet weak var antallVaagenLabel: UILabel!
+    @IBOutlet weak var antallSledenLabel: UILabel?
+    @IBOutlet weak var antallVaagenLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.usernameLabel.text = username
-        getSledenVaagen()
+        configureView()
+        
+        //self.usernameLabel.text = username
+        //getSledenVaagen()
         
     }
     
+    
+    private func configureView() {
+        
+        if let username = self.user?.username {
+            self.title = username
+        }
+        
+        // Configure navbar back button
+        if let buttonfont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
+            
+            let barButtonAttributesDictionary: [String: AnyObject]? = [
+                
+                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: buttonfont
+                
+            ]
+            
+            UIBarButtonItem.appearance().setTitleTextAttributes(barButtonAttributesDictionary, forState: .Normal)
+        }
+        
+        // Setter labelene sleden og vågen
+        self.antallSledenLabel?.text = "Sleden: \(3)"
+        self.antallVaagenLabel?.text = "Vågen: \(1)"
+        
+    }
+    
+    
     func getSledenVaagen(){
         
-        if let userIDUnwraped = userID {
+        if let userIDUnwraped = self.user!.userID {
             let query = PFQuery(className: "Sleden")
             query.whereKey("userID", equalTo: userIDUnwraped)
             query.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
@@ -43,8 +77,8 @@ class detailVennViewController: UIViewController {
                         
                         if let object = objects {
                         
-                            self.antallSledenLabel.text = object[0]["sleden"] as? String
-                            self.antallVaagenLabel.text = object[0]["vaagen"] as? String
+                            //self.antallSledenLabel!.text = object[0]["sleden"] as? String
+                            //self.antallVaagenLabel!.text = object[0]["vaagen"] as? String
                             
                         }
                         
@@ -63,15 +97,16 @@ class detailVennViewController: UIViewController {
     
     @IBAction func sendSledenButton(sender: AnyObject) {
         
-        
-        print("Sendt a sleden to \(username)")
+        if let username = self.user?.username {
+            print("Sendt a sleden to \(username)")
+        }
         
     }
 
     @IBAction func sendVaagenButton(sender: AnyObject) {
         
-        
-        print("Sendt a vågen to \(username)")
-        
+        if let username = self.user?.userID {
+            print("Sendt a vågen to \(username)")
+        }
     }
 }

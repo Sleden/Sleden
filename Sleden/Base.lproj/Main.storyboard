@@ -324,51 +324,65 @@
                         <viewControllerLayoutGuide type="top" id="eEp-K2-7cK"/>
                         <viewControllerLayoutGuide type="bottom" id="HRy-jU-1o4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZTW-zS-nfw">
+                    <view key="view" contentMode="scaleToFill" id="ZTW-zS-nfw" customClass="BackgroundView" customModule="Sleden" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp5-em-dJ9">
-                                <rect key="frame" x="20" y="340" width="87" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp5-em-dJ9">
+                                <rect key="frame" x="20" y="222" width="87" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4qs-6w-aPO"/>
+                                </constraints>
                                 <state key="normal" title="Send Sleden"/>
                                 <connections>
                                     <action selector="sendSledenButton:" destination="RPv-Wz-pBJ" eventType="touchUpInside" id="bDd-go-okg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXc-Oq-rvB">
-                                <rect key="frame" x="217" y="340" width="83" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXc-Oq-rvB">
+                                <rect key="frame" x="217" y="222" width="83" height="30"/>
                                 <state key="normal" title="Send Vågen"/>
                                 <connections>
                                     <action selector="sendVaagenButton:" destination="RPv-Wz-pBJ" eventType="touchUpInside" id="fuk-UR-u92"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7f-84-YcP">
-                                <rect key="frame" x="20" y="147" width="280" height="33"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vågen: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2G-PN-Wnu">
-                                <rect key="frame" x="20" y="267" width="141" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vågen: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2G-PN-Wnu">
+                                <rect key="frame" x="20" y="149" width="141" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141" id="CBF-oV-aKL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleden: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnZ-Zd-CV5">
-                                <rect key="frame" x="20" y="226" width="122" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleden: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnZ-Zd-CV5">
+                                <rect key="frame" x="20" y="108" width="122" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="7Zb-Xe-stn"/>
+                                    <constraint firstAttribute="width" constant="122" id="i4W-YN-Rog"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bnZ-Zd-CV5" firstAttribute="leading" secondItem="V2G-PN-Wnu" secondAttribute="leading" id="Lt2-gU-vE6"/>
+                            <constraint firstItem="HRy-jU-1o4" firstAttribute="top" secondItem="fp5-em-dJ9" secondAttribute="bottom" constant="267" id="MyX-oP-HbV"/>
+                            <constraint firstItem="V2G-PN-Wnu" firstAttribute="top" secondItem="bnZ-Zd-CV5" secondAttribute="bottom" constant="8" symbolic="YES" id="NYR-3E-Tdu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yXc-Oq-rvB" secondAttribute="trailing" constant="4" id="d82-d6-aQC"/>
+                            <constraint firstItem="fp5-em-dJ9" firstAttribute="top" secondItem="V2G-PN-Wnu" secondAttribute="bottom" constant="40" id="fJV-Cx-aoK"/>
+                            <constraint firstItem="yXc-Oq-rvB" firstAttribute="baseline" secondItem="fp5-em-dJ9" secondAttribute="baseline" id="rEd-s8-twt"/>
+                            <constraint firstItem="V2G-PN-Wnu" firstAttribute="leading" secondItem="fp5-em-dJ9" secondAttribute="leading" id="tA9-Be-YOO"/>
+                            <constraint firstItem="bnZ-Zd-CV5" firstAttribute="leading" secondItem="ZTW-zS-nfw" secondAttribute="leadingMargin" constant="4" id="tVi-wZ-HmH"/>
+                            <constraint firstItem="V2G-PN-Wnu" firstAttribute="centerY" secondItem="ZTW-zS-nfw" secondAttribute="centerY" constant="-118.5" id="uTj-em-MMe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fAT-uw-so0"/>
                     <connections>
                         <outlet property="antallSledenLabel" destination="bnZ-Zd-CV5" id="CVJ-ke-7FV"/>
                         <outlet property="antallVaagenLabel" destination="V2G-PN-Wnu" id="P5a-My-zT4"/>
                         <outlet property="navigationItem" destination="fAT-uw-so0" id="NXA-fT-O2v"/>
-                        <outlet property="usernameLabel" destination="r7f-84-YcP" id="vzR-GS-FlD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiK-zl-u8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -403,6 +417,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="c2r-OD-rtP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
