@@ -32,22 +32,41 @@ class GetFriends {
                     if let friends = user["friends"] as? [PFUser] {
                         for friend in friends {
                             
-                            friend.fetchIfNeededInBackgroundWithBlock({ (thisFriend: PFObject?, error: NSError?) -> Void in
+                            
+                            friend.fetchInBackgroundWithBlock({ (thisFriend: PFObject?, error: NSError?) -> Void in
                                 
                                 if let thisUser = thisFriend as? PFUser {
                                 
                                     let user: User = User(newUser: thisUser, isFriend: userRelation.Friend)
                                     
-                                    if self.myFriends.contains(user) {
+                                    var isContained = false
+                                    
+                                    for i in self.myFriends {
                                         
-                                        self.myFriends.append(user)
+                                        if i.userID == user.userID! {
+                                            
+                                            isContained = true
+                                            break
+                                            
+                                        }
                                         
                                     }
+                                    
+                                    
+                                    
+                                    if !isContained {
+                                        print(self.myFriends.count)
+                                        self.myFriends.append(user)
+                                    }
+                                    
+                                    // TODO: Bør bruke en self.myFriends.contains(user), men den endrer append funksjonen
+                                    
                                 
                                 }
                                 
                                 table.reloadData()
                             })
+                            
                         }
                         
                     }

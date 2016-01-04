@@ -25,6 +25,7 @@
 		651786CA1C333ABF00D62297 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786C91C333ABF00D62297 /* SystemConfiguration.framework */; };
 		651786CC1C333AC800D62297 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786CB1C333AC800D62297 /* libz.tbd */; };
 		651786CE1C333AD300D62297 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786CD1C333AD300D62297 /* libsqlite3.tbd */; };
+		655D52CD1C3B12EF0037AD8A /* detailVennViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D52CC1C3B12EF0037AD8A /* detailVennViewController.swift */; };
 		65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */; };
 		65ABB1801C342D01002AA32D /* menyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17F1C342D01002AA32D /* menyViewController.swift */; };
 		65ABB1821C357845002AA32D /* TextViewDesigne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1811C357845002AA32D /* TextViewDesigne.swift */; };
@@ -82,6 +83,7 @@
 		651786C91C333ABF00D62297 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		651786CB1C333AC800D62297 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		651786CD1C333AD300D62297 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		655D52CC1C3B12EF0037AD8A /* detailVennViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailVennViewController.swift; sourceTree = "<group>"; };
 		65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrerViewController.swift; sourceTree = "<group>"; };
 		65ABB17F1C342D01002AA32D /* menyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menyViewController.swift; sourceTree = "<group>"; };
 		65ABB1811C357845002AA32D /* TextViewDesigne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewDesigne.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				65ABB1891C36F0EE002AA32D /* FrindsTableViewController.swift */,
 				65ABB1ED1C395FA6002AA32D /* AddFriends.swift */,
+				655D52CC1C3B12EF0037AD8A /* detailVennViewController.swift */,
 			);
 			name = Friends;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655D52CD1C3B12EF0037AD8A /* detailVennViewController.swift in Sources */,
 				6517868D1C33398800D62297 /* Sleden.xcdatamodeld in Sources */,
 				651786871C33398800D62297 /* LoggInnViewController.swift in Sources */,
 				65ABB1921C36F6F1002AA32D /* userRelationEnum.swift in Sources */,

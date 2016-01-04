@@ -285,17 +285,12 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="t5W-Pi-RDR">
                                             <rect key="frame" x="8" y="7" width="52" height="28.5"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDh-nb-qDg">
-                                            <rect key="frame" x="276" y="7" width="36" height="30"/>
-                                            <state key="normal" title="Send"/>
-                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="CNS-YT-LEB" id="yU7-D1-6c7"/>
                                     <outlet property="profileImageView" destination="t5W-Pi-RDR" id="0la-He-6DL"/>
-                                    <outlet property="sendButton" destination="KDh-nb-qDg" id="89i-ED-SwB"/>
-                                    <segue destination="RPv-Wz-pBJ" kind="push" id="Ifg-nJ-8lP"/>
+                                    <segue destination="RPv-Wz-pBJ" kind="push" identifier="tilVenn" id="Ifg-nJ-8lP"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" id="l9A-kJ-0Mq">
@@ -321,10 +316,10 @@
             </objects>
             <point key="canvasLocation" x="481" y="1891"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Venn View Controller-->
         <scene sceneID="EHt-7o-gmc">
             <objects>
-                <viewController id="RPv-Wz-pBJ" sceneMemberID="viewController">
+                <viewController id="RPv-Wz-pBJ" customClass="detailVennViewController" customModule="Sleden" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eEp-K2-7cK"/>
                         <viewControllerLayoutGuide type="bottom" id="HRy-jU-1o4"/>
@@ -332,13 +327,53 @@
                     <view key="view" contentMode="scaleToFill" id="ZTW-zS-nfw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp5-em-dJ9">
+                                <rect key="frame" x="20" y="340" width="87" height="30"/>
+                                <state key="normal" title="Send Sleden"/>
+                                <connections>
+                                    <action selector="sendSledenButton:" destination="RPv-Wz-pBJ" eventType="touchUpInside" id="bDd-go-okg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXc-Oq-rvB">
+                                <rect key="frame" x="217" y="340" width="83" height="30"/>
+                                <state key="normal" title="Send Vågen"/>
+                                <connections>
+                                    <action selector="sendVaagenButton:" destination="RPv-Wz-pBJ" eventType="touchUpInside" id="fuk-UR-u92"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7f-84-YcP">
+                                <rect key="frame" x="20" y="147" width="280" height="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vågen: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2G-PN-Wnu">
+                                <rect key="frame" x="20" y="267" width="141" height="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleden: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnZ-Zd-CV5">
+                                <rect key="frame" x="20" y="226" width="122" height="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fAT-uw-so0"/>
+                    <connections>
+                        <outlet property="antallSledenLabel" destination="bnZ-Zd-CV5" id="CVJ-ke-7FV"/>
+                        <outlet property="antallVaagenLabel" destination="V2G-PN-Wnu" id="P5a-My-zT4"/>
+                        <outlet property="navigationItem" destination="fAT-uw-so0" id="NXA-fT-O2v"/>
+                        <outlet property="usernameLabel" destination="r7f-84-YcP" id="vzR-GS-FlD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiK-zl-u8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="1889"/>
+            <point key="canvasLocation" x="964" y="1891"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jpO-03-zgQ">

@@ -10,7 +10,7 @@ import Foundation
 import Parse
 import CoreData
 
-class User: NSManagedObject {
+class User {
     
     // Properties som kommer fra PFUser
     var username: String?
@@ -41,23 +41,9 @@ class User: NSManagedObject {
         let isFriend: userRelation? = nil
         self.init(newUser: newUser, isFriend: isFriend)
     }
+
     
-    
-    
-    // Lager denne funksjonen slik at det går ann å sammenligne, for å se om 2 brukere er like
-    override func isEqual(object: AnyObject?) -> Bool {
-        
-        // "Safe Unwrapping" av objektet
-        if let compareUser = object {
-            if self.userID! == compareUser as! String {
-                return true
-            } else {
-                return false
-            }
-        } else {
-            return false
-        }
-    }
+    // TODO: Lage en isEqual funksjon som kan bruke .contains() funksjonen nå table view skal refreshe
     
     
 }
