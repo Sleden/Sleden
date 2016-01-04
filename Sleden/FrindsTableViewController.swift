@@ -13,43 +13,64 @@ class FrindsTableViewController: UITableViewController {
     var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0,150,150)) as UIActivityIndicatorView
     
     
-    
-    
+    var GetFriendsObject: GetFriends = GetFriends()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        GetFriendsObject.getFriends(tableView, actInt: actInd)
+        tableView.reloadData()
+        
+        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
+        
+        //tableView.backgroundView = BackgroundView()
+      
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refresh(refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        GetFriendsObject.getFriends(tableView, actInt: actInd)
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.GetFriendsObject.myFriends.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TableViewCell
-        cell.nameLabel.text = "name"
+        cell.nameLabel.text = self.GetFriendsObject.myFriends[indexPath.row].username
         cell.profileImageView.image = UIImage(named: "bg")
-        // Configure the cell...
-
         return cell
     }
     
