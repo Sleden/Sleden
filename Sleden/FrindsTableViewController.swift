@@ -19,8 +19,11 @@ class FrindsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        GetFriendsObject.GetFriends(table: tableView, actInd: actInd)
+        GetFriendsObject.getFriends(tableView, actInt: actInd)
         tableView.reloadData()
+        
+        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+
         
         //tableView.backgroundView = BackgroundView()
       
@@ -41,6 +44,14 @@ class FrindsTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refresh(refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        GetFriendsObject.getFriends(tableView, actInt: actInd)
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 
     // MARK: - Table view data source
