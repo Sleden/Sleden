@@ -15,7 +15,7 @@ class GetFriends {
     
     func getFriends(table: UITableView, actInt: UIActivityIndicatorView) {
         
-        
+      
         
         let queryFriends = PFQuery(className: "Friends")
         queryFriends.whereKey("UserID", equalTo: (PFUser.currentUser()?.objectId)!)
@@ -29,29 +29,78 @@ class GetFriends {
                 
                 if let user = objects?[0]{
                     
+                    var usersThatIsContained: [PFUser] = []
+                    
                     if let friends = user["friends"] as? [PFUser] {
+                        
+                        
+                        
                         for friend in friends {
-                            
-                            friend.fetchIfNeededInBackgroundWithBlock({ (thisFriend: PFObject?, error: NSError?) -> Void in
-                                
+                                friend.fetchInBackgroundWithBlock({ (thisFriend: PFObject?, error: NSError?) -> Void in
                                 if let thisUser = thisFriend as? PFUser {
-                                
-                                    let user: User = User(newUser: thisUser, isFriend: userRelation.Friend)
                                     
-                                    if self.myFriends.contains(user) {
+                                    let user: User = User(newUser: thisUser, isFriend: userRelation.Friend)
+
+                                    var isContained = false
+                                    for i in self.myFriends {
+                                        
+                                        if i.userID == user.userID! {
+                                            isContained = true
+                                            break
+                                            
+                                        }
+                                    }
+                                    if !isContained {
                                         
                                         self.myFriends.append(user)
-                                        
+                                        usersThatIsContained.append(friend)
+                                    } else {
+                                        usersThatIsContained.append(friend)
                                     }
-                                
+                                    
+                                    // TODO: Finne en måte å sjekke om brukere er slettet fra venner
+                                    
+                                    // TODO: Bør bruke en self.myFriends.contains(user), men den endrer append funksjonen
+                                    
                                 }
-                                
                                 table.reloadData()
                             })
                         }
                         
                     }
+                    
+                    if usersThatIsContained.count != self.myFriends.count {
+                        var deleteAtIndexArray: [Int]?
+                        var myFriendsIndex = 0
+                        for myFriendsUser in self.myFriends {
+                            
+                            for userThatIsContained in usersThatIsContained {
+                                
+                                if myFriendsUser.userID == userThatIsContained.objectId {
+                                    deleteAtIndexArray?.append(myFriendsIndex)
+                                }
+                                
+                            }
+                            myFriendsIndex++
+                            
+                        }
+                        
+                        if let deleteAtIndexArray = deleteAtIndexArray {
+                            
+                            for deleteAtIndex in deleteAtIndexArray {
+                                
+                                self.myFriends.removeAtIndex(deleteAtIndex)
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                    
                 }
+                
+                table.reloadData()
                 
                 
             } else {
@@ -67,13 +116,13 @@ class GetFriends {
         
         //let newFriend = User(username: username, userID: userID, isFriend: userRelation.Friend)
         
-        addFriendWithUserObject(view, newFriend: user)
+        addFriendWithPFUserObject(view, newFriend: user)
         
         
     }
     
     
-    static func addFriendWithUserObject(view: UIViewController, newFriend: PFUser) {
+    static func addFriendWithPFUserObject(view: UIViewController, newFriend: PFUser) {
         
         //if newFriend.isFriend != userRelation.Friend {
         //    newFriend.isFriend = userRelation.Friend
@@ -84,39 +133,29 @@ class GetFriends {
         
         queryFriends.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
             
-            print("Ine i blokken")
+            
             if error == nil {
-                print(objects)
-                
                 if let user = objects {
-                    
                     if user.count == 1 {
-                    
-                        print("Feiler her?")
-                    
                         if var friends = user[0]["friends"] as? [PFUser] {
-                            
                             for friend in friends {
-                                
                                 if friend.objectId == newFriend.objectId {
-                                    
+
+                                    AlertView.showAlertWithOK(view, title: "Invalide", message: "Bruker alerede venn")
                                     print("Bruker alerede venn")
-                                    
                                     return
                                     
                                 }
-                                
                             }
                             
                             friends.append(newFriend)
                             user[0]["friends"] = friends
                             user[0].saveInBackground()
+                            AlertView.showAlertWithOK(view, title: "Success", message: "Added friend: \(newFriend.username!)")
                             print("Added friend: \(newFriend.username!))")
                         
                         } else {
-                        
                             print("feiler her")
-                        
                         }
                     } else {
                     
@@ -133,7 +172,7 @@ class GetFriends {
                         newObject.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
                             
                             if (success) {
-                                
+                                AlertView.showAlertWithOK(view, title: "Success", message: "Added friend: \(newFriend.username!)")
                                 print("La til venn, og nytt felt")
                                 
                             }
@@ -164,6 +203,39 @@ class GetFriends {
         
         
     }
+    
+    
+    func deleteFriendFromArrayWithUsername(username: String, table: UITableView) {
+        
+        var index = 0
+        
+        for user in self.myFriends {
+            
+            if username == user.username {
+                
+                deleteFriendFromArrayWithIndex(index, table: table)
+                
+            }
+            index++
+        }
+        
+    }
+    
+    
+    
+    
+    func deleteFriendFromArrayWithIndex(index: Int, table: UITableView) {
+        
+        self.myFriends.removeAtIndex(index)
+        table.reloadData()
+        
+        
+        
+    }
+    
+    
+    
+    
     
     
 }

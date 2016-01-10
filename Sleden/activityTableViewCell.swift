@@ -1,25 +1,23 @@
 //
-//  TableViewCell.swift
+//  activityTableViewCell.swift
 //  Sleden
 //
-//  Created by Daniel Alvestad on 01/01/16.
+//  Created by Daniel Alvestad on 06/01/16.
 //  Copyright © 2016 Daniel Alvestad. All rights reserved.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class activityTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var profileImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        //self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
-        //self.profileImageView.clipsToBounds = true;
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

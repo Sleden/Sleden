@@ -7,25 +7,28 @@
 //
 
 import UIKit
+import Parse
 
 class FrindsTableViewController: UITableViewController {
 
     var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0,150,150)) as UIActivityIndicatorView
     
     
+    var user = ""
+    
     var GetFriendsObject: GetFriends = GetFriends()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        user = (PFUser.currentUser()?.username)!
         GetFriendsObject.getFriends(tableView, actInt: actInd)
         tableView.reloadData()
         
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
         
-        //tableView.backgroundView = BackgroundView()
+        tableView.backgroundView = BackgroundView()
       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,6 +40,23 @@ class FrindsTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        GetFriendsObject.getFriends(tableView, actInt: actInd)
+        tableView.reloadData()
+    }
+
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        if PFUser.currentUser()?.username != user {
+            user = PFUser.currentUser()!.username!
+            GetFriendsObject.myFriends = []
+            GetFriendsObject.getFriends(tableView, actInt: actInd)
+            tableView.reloadData()
+        } else {
+            GetFriendsObject.getFriends(tableView, actInt: actInd)
+            tableView.reloadData()
+        }
         
     }
     
@@ -110,14 +130,56 @@ class FrindsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "tilVenn" {
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                
+                let user = GetFriendsObject.myFriends[indexPath.row]
+                
+                // Sender over objektet som tilsvarer raden som bli klikket i table viewet
+                (segue.destinationViewController as! detailVennViewController).user = user
+                
+            }
+            
+            
+        } else if segue.identifier == "addFriend" {
+            
+            if !UIAccessibilityIsReduceTransparencyEnabled() {
+                //self.view.backgroundColor = UIColor.clearColor()
+                
+                let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+                let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                //always fill the view
+                blurEffectView.frame = self.view.frame
+                blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+                
+                self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+            }
+            else {
+                self.view.backgroundColor = UIColor.blackColor()
+            }
+
+            
+            
+            let modalViewController = AddFriends()
+            modalViewController.modalPresentationStyle = .OverCurrentContext
+            presentViewController(modalViewController, animated: true, completion: nil)
+            
+            
+            
+            
+        }
+        
+        
     }
-    */
+    
 
 }

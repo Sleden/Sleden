@@ -25,8 +25,14 @@
 		651786CA1C333ABF00D62297 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786C91C333ABF00D62297 /* SystemConfiguration.framework */; };
 		651786CC1C333AC800D62297 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786CB1C333AC800D62297 /* libz.tbd */; };
 		651786CE1C333AD300D62297 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 651786CD1C333AD300D62297 /* libsqlite3.tbd */; };
+		655D52CD1C3B12EF0037AD8A /* detailVennViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D52CC1C3B12EF0037AD8A /* detailVennViewController.swift */; };
+		655D52CF1C3D21AF0037AD8A /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D52CE1C3D21AF0037AD8A /* settingsViewController.swift */; };
+		655D52D31C3D245E0037AD8A /* activityTableVeiwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D52D21C3D245E0037AD8A /* activityTableVeiwController.swift */; };
+		655D52D51C3D26500037AD8A /* activityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D52D41C3D26500037AD8A /* activityTableViewCell.swift */; };
+		655D52DA1C3FFE2A0037AD8A /* sledenTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D52D91C3FFE2A0037AD8A /* sledenTypeEnum.swift */; };
+		655D52DC1C3FFF4D0037AD8A /* Sleden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D52DB1C3FFF4D0037AD8A /* Sleden.swift */; };
+		655D52DE1C3FFFA50037AD8A /* sendSleden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D52DD1C3FFFA50037AD8A /* sendSleden.swift */; };
 		65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */; };
-		65ABB1801C342D01002AA32D /* menyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB17F1C342D01002AA32D /* menyViewController.swift */; };
 		65ABB1821C357845002AA32D /* TextViewDesigne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1811C357845002AA32D /* TextViewDesigne.swift */; };
 		65ABB1861C36ED42002AA32D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1851C36ED42002AA32D /* TableViewCell.swift */; };
 		65ABB18A1C36F0EE002AA32D /* FrindsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1891C36F0EE002AA32D /* FrindsTableViewController.swift */; };
@@ -38,6 +44,7 @@
 		65ABB1E61C381612002AA32D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1E51C381612002AA32D /* ParseUI.framework */; };
 		65ABB1E81C39416A002AA32D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1E71C39416A002AA32D /* BackgroundView.swift */; };
 		65ABB1EE1C395FA6002AA32D /* AddFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1ED1C395FA6002AA32D /* AddFriends.swift */; };
+		65C615801C419E1000BE3E7F /* AlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C6157F1C419E1000BE3E7F /* AlerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +89,14 @@
 		651786C91C333ABF00D62297 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		651786CB1C333AC800D62297 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		651786CD1C333AD300D62297 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		655D52CC1C3B12EF0037AD8A /* detailVennViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailVennViewController.swift; sourceTree = "<group>"; };
+		655D52CE1C3D21AF0037AD8A /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		655D52D21C3D245E0037AD8A /* activityTableVeiwController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityTableVeiwController.swift; sourceTree = "<group>"; };
+		655D52D41C3D26500037AD8A /* activityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityTableViewCell.swift; sourceTree = "<group>"; };
+		655D52D91C3FFE2A0037AD8A /* sledenTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sledenTypeEnum.swift; sourceTree = "<group>"; };
+		655D52DB1C3FFF4D0037AD8A /* Sleden.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sleden.swift; sourceTree = "<group>"; };
+		655D52DD1C3FFFA50037AD8A /* sendSleden.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sendSleden.swift; sourceTree = "<group>"; };
 		65ABB17D1C34262E002AA32D /* RegistrerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrerViewController.swift; sourceTree = "<group>"; };
-		65ABB17F1C342D01002AA32D /* menyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menyViewController.swift; sourceTree = "<group>"; };
 		65ABB1811C357845002AA32D /* TextViewDesigne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewDesigne.swift; sourceTree = "<group>"; };
 		65ABB1851C36ED42002AA32D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		65ABB1891C36F0EE002AA32D /* FrindsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrindsTableViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +109,7 @@
 		65ABB1E51C381612002AA32D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.11.0/ParseUI.framework"; sourceTree = "<group>"; };
 		65ABB1E71C39416A002AA32D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		65ABB1ED1C395FA6002AA32D /* AddFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriends.swift; sourceTree = "<group>"; };
+		65C6157F1C419E1000BE3E7F /* AlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,12 +226,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		655D52D61C3D26570037AD8A /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				65ABB1851C36ED42002AA32D /* TableViewCell.swift */,
+				655D52D41C3D26500037AD8A /* activityTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
 		65ABB1831C357A06002AA32D /* Designe */ = {
 			isa = PBXGroup;
 			children = (
 				65ABB1811C357845002AA32D /* TextViewDesigne.swift */,
-				65ABB1851C36ED42002AA32D /* TableViewCell.swift */,
+				655D52D61C3D26570037AD8A /* TableViewCell */,
 				65ABB1E71C39416A002AA32D /* BackgroundView.swift */,
+				65C6157F1C419E1000BE3E7F /* AlerView.swift */,
 			);
 			name = Designe;
 			sourceTree = "<group>";
@@ -228,6 +252,7 @@
 				65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */,
 				65ABB18C1C36F364002AA32D /* GetFriends.swift */,
 				65ABB18F1C36F688002AA32D /* User.swift */,
+				65C6157E1C419AFF00BE3E7F /* Send Sleden */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -235,8 +260,9 @@
 		65ABB1EF1C3AAB30002AA32D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				655D52D21C3D245E0037AD8A /* activityTableVeiwController.swift */,
+				655D52CE1C3D21AF0037AD8A /* settingsViewController.swift */,
 				65ABB1F01C3AAB3A002AA32D /* LoggInn */,
-				65ABB17F1C342D01002AA32D /* menyViewController.swift */,
 				65ABB1F11C3AAB46002AA32D /* Friends */,
 			);
 			name = Controllers;
@@ -256,8 +282,19 @@
 			children = (
 				65ABB1891C36F0EE002AA32D /* FrindsTableViewController.swift */,
 				65ABB1ED1C395FA6002AA32D /* AddFriends.swift */,
+				655D52CC1C3B12EF0037AD8A /* detailVennViewController.swift */,
 			);
 			name = Friends;
+			sourceTree = "<group>";
+		};
+		65C6157E1C419AFF00BE3E7F /* Send Sleden */ = {
+			isa = PBXGroup;
+			children = (
+				655D52D91C3FFE2A0037AD8A /* sledenTypeEnum.swift */,
+				655D52DB1C3FFF4D0037AD8A /* Sleden.swift */,
+				655D52DD1C3FFFA50037AD8A /* sendSleden.swift */,
+			);
+			name = "Send Sleden";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,16 +431,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655D52D31C3D245E0037AD8A /* activityTableVeiwController.swift in Sources */,
+				655D52CD1C3B12EF0037AD8A /* detailVennViewController.swift in Sources */,
 				6517868D1C33398800D62297 /* Sleden.xcdatamodeld in Sources */,
+				655D52D51C3D26500037AD8A /* activityTableViewCell.swift in Sources */,
+				655D52DE1C3FFFA50037AD8A /* sendSleden.swift in Sources */,
 				651786871C33398800D62297 /* LoggInnViewController.swift in Sources */,
 				65ABB1921C36F6F1002AA32D /* userRelationEnum.swift in Sources */,
 				65ABB17E1C34262E002AA32D /* RegistrerViewController.swift in Sources */,
-				65ABB1801C342D01002AA32D /* menyViewController.swift in Sources */,
+				655D52CF1C3D21AF0037AD8A /* settingsViewController.swift in Sources */,
 				65ABB18E1C36F364002AA32D /* GetFriends.swift in Sources */,
 				65ABB1E81C39416A002AA32D /* BackgroundView.swift in Sources */,
+				655D52DA1C3FFE2A0037AD8A /* sledenTypeEnum.swift in Sources */,
 				651786851C33398800D62297 /* AppDelegate.swift in Sources */,
+				655D52DC1C3FFF4D0037AD8A /* Sleden.swift in Sources */,
 				65ABB1861C36ED42002AA32D /* TableViewCell.swift in Sources */,
 				65ABB1821C357845002AA32D /* TextViewDesigne.swift in Sources */,
+				65C615801C419E1000BE3E7F /* AlerView.swift in Sources */,
 				65ABB18A1C36F0EE002AA32D /* FrindsTableViewController.swift in Sources */,
 				65ABB1901C36F688002AA32D /* User.swift in Sources */,
 				65ABB1EE1C395FA6002AA32D /* AddFriends.swift in Sources */,
