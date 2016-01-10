@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class settingsViewController: UIViewController {
     
@@ -15,6 +16,17 @@ class settingsViewController: UIViewController {
     }
     
     
+    @IBAction func logOutButton(sender: AnyObject) {
+        
+        
+        PFUser.logOut()
+        
+        
+        
+        self.tabBarController?.selectedIndex = 0
+        self.tabBarController?.reloadInputViews()
+        
+    }
     
     
     

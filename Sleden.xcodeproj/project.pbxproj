@@ -44,6 +44,7 @@
 		65ABB1E61C381612002AA32D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ABB1E51C381612002AA32D /* ParseUI.framework */; };
 		65ABB1E81C39416A002AA32D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1E71C39416A002AA32D /* BackgroundView.swift */; };
 		65ABB1EE1C395FA6002AA32D /* AddFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1ED1C395FA6002AA32D /* AddFriends.swift */; };
+		65C615801C419E1000BE3E7F /* AlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C6157F1C419E1000BE3E7F /* AlerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		65ABB1E51C381612002AA32D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.11.0/ParseUI.framework"; sourceTree = "<group>"; };
 		65ABB1E71C39416A002AA32D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		65ABB1ED1C395FA6002AA32D /* AddFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriends.swift; sourceTree = "<group>"; };
+		65C6157F1C419E1000BE3E7F /* AlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 				65ABB1811C357845002AA32D /* TextViewDesigne.swift */,
 				655D52D61C3D26570037AD8A /* TableViewCell */,
 				65ABB1E71C39416A002AA32D /* BackgroundView.swift */,
+				65C6157F1C419E1000BE3E7F /* AlerView.swift */,
 			);
 			name = Designe;
 			sourceTree = "<group>";
@@ -249,9 +252,7 @@
 				65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */,
 				65ABB18C1C36F364002AA32D /* GetFriends.swift */,
 				65ABB18F1C36F688002AA32D /* User.swift */,
-				655D52D91C3FFE2A0037AD8A /* sledenTypeEnum.swift */,
-				655D52DB1C3FFF4D0037AD8A /* Sleden.swift */,
-				655D52DD1C3FFFA50037AD8A /* sendSleden.swift */,
+				65C6157E1C419AFF00BE3E7F /* Send Sleden */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -284,6 +285,16 @@
 				655D52CC1C3B12EF0037AD8A /* detailVennViewController.swift */,
 			);
 			name = Friends;
+			sourceTree = "<group>";
+		};
+		65C6157E1C419AFF00BE3E7F /* Send Sleden */ = {
+			isa = PBXGroup;
+			children = (
+				655D52D91C3FFE2A0037AD8A /* sledenTypeEnum.swift */,
+				655D52DB1C3FFF4D0037AD8A /* Sleden.swift */,
+				655D52DD1C3FFFA50037AD8A /* sendSleden.swift */,
+			);
+			name = "Send Sleden";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,6 +447,7 @@
 				655D52DC1C3FFF4D0037AD8A /* Sleden.swift in Sources */,
 				65ABB1861C36ED42002AA32D /* TableViewCell.swift in Sources */,
 				65ABB1821C357845002AA32D /* TextViewDesigne.swift in Sources */,
+				65C615801C419E1000BE3E7F /* AlerView.swift in Sources */,
 				65ABB18A1C36F0EE002AA32D /* FrindsTableViewController.swift in Sources */,
 				65ABB1901C36F688002AA32D /* User.swift in Sources */,
 				65ABB1EE1C395FA6002AA32D /* AddFriends.swift in Sources */,

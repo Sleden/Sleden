@@ -24,19 +24,13 @@ class activityTableVeiwController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Sjekker om det er en bruker som er logget inn, hvis ikke må brukeren logge inn før appen kan tas i bruk.
-        if (PFUser.currentUser()?.username == nil) {
+        if !(PFUser.currentUser()?.username == nil) {
             
-            // Sender brukeren til LOGG INN viewet
-            performSegueWithIdentifier("logInView", sender: nil)
+            usernameLabel?.text = PFUser.currentUser()?.username
+            sledenLabel?.text = ("Sleden: \(3)")
+            vaagenLabel?.text = ("Vaagen: \(2)")
+            
         }
-        
-        
-        usernameLabel?.text = PFUser.currentUser()?.username
-        sledenLabel?.text = ("Sleden: \(3)")
-        vaagenLabel?.text = ("Vaagen: \(2)")
-        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -44,6 +38,24 @@ class activityTableVeiwController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        // Sjekker om det er en bruker som er logget inn, hvis ikke må brukeren logge inn før appen kan tas i bruk.
+        if (PFUser.currentUser()?.username == nil) {
+            
+            // Sender brukeren til LOGG INN viewet
+            performSegueWithIdentifier("logInView", sender: nil)
+        } else {
+        
+            usernameLabel?.text = PFUser.currentUser()?.username
+            sledenLabel?.text = ("Sleden: \(3)")
+            vaagenLabel?.text = ("Vaagen: \(2)")
+        
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

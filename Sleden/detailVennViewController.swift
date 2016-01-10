@@ -40,6 +40,10 @@ class detailVennViewController: UIViewController {
     
     private func configureView() {
         
+        // Setter antall sleden og vaagen
+        getSledenVaagen()
+        
+        
         if let username = self.user?.username {
             self.title = username
         }
@@ -57,39 +61,68 @@ class detailVennViewController: UIViewController {
             UIBarButtonItem.appearance().setTitleTextAttributes(barButtonAttributesDictionary, forState: .Normal)
         }
         
-        // Setter labelene sleden og vågen
-        self.antallSledenLabel?.text = "Sleden: \(3)"
-        self.antallVaagenLabel?.text = "Vågen: \(1)"
+        
+        
         
     }
     
     
     func getSledenVaagen(){
         
-        if let userIDUnwraped = self.user!.userID {
+        self.antallSledenLabel?.text = "Sleden: 3"
+        self.antallVaagenLabel?.text = "Vaagen: 2"
+        
+        
+        
+        /*
+        if let user = self.user {
+            
+            let thisPFUser = PFObject(className: "User")
+            
+            thisPFUser["objectId"] = user.userID
+            thisPFUser["username"] = user.username
+            
             let query = PFQuery(className: "Sleden")
-            query.whereKey("userID", equalTo: userIDUnwraped)
+            query.whereKey("sledenUser", equalTo: thisPFUser)
             query.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
                 
-                if error == nil {
+                
+                
+                if let usersSleden = objects {
                     
-                    if objects?.count == 1 {
-                        
-                        if let object = objects {
-                        
-                            //self.antallSledenLabel!.text = object[0]["sleden"] as? String
-                            //self.antallVaagenLabel!.text = object[0]["vaagen"] as? String
-                            
+                    var numberOfSleden = 0
+                    var numberOfVaagen = 0
+                    
+                    for sleden in usersSleden {
+                        if (sleden["sledenType"] as? String == SledenType.Sleden.rawValue) {
+                            numberOfSleden++
+                        } else {
+                            numberOfVaagen++
                         }
                         
                     }
                     
+                    self.antallSledenLabel?.text = String(numberOfSleden)
+                    self.antallVaagenLabel?.text = String(numberOfVaagen)
+                    
+                    
+                } else {
+                    
+                    self.antallSledenLabel?.text = "Sleden: "
+                    self.antallVaagenLabel?.text = "Vaagen: "
+                    
+                    print(error)
                     
                 }
                 
                 
+                
+                
+                
+                
             })
         }
+        */
         
     }
     
@@ -97,16 +130,107 @@ class detailVennViewController: UIViewController {
     
     @IBAction func sendSledenButton(sender: AnyObject) {
         
-        if let username = self.user?.username {
-            print("Sendt a sleden to \(username)")
-        }
+        //SendSleden(fromUser: User(newUser: PFUser.currentUser()!), sledenUser: user!, sledenType: SledenType.Sleden)
+        print("Sendt sleden to \(user?.username)")
         
     }
 
     @IBAction func sendVaagenButton(sender: AnyObject) {
         
-        if let username = self.user?.userID {
-            print("Sendt a vågen to \(username)")
-        }
+        //SendSleden(fromUser: User(newUser: PFUser.currentUser()!), sledenUser: user!, sledenType: SledenType.Sleden)
+        print("Sendt vaagen to \(user?.username)")
     }
+    
+    
+    @IBAction func deleteFriendButton(sender: AnyObject) {
+        
+        let thisUserQuery = PFUser.query()
+        thisUserQuery?.whereKey("objectId", equalTo: self.user!.userID!)
+        thisUserQuery?.getFirstObjectInBackgroundWithBlock({ (object: PFObject?, error: NSError?) -> Void in
+            
+            if let pfuser = object as? PFUser{
+                
+            
+        
+        
+            let friendQuery = PFQuery(className: "Friends")
+            friendQuery.whereKey("friends", equalTo: pfuser)
+            friendQuery.getFirstObjectInBackgroundWithBlock { (object: PFObject?, error: NSError?) -> Void in
+            
+                if let user = object {
+                
+                    var friends = user["friends"] as! [PFUser]
+                
+                    var index = 0
+                    for friend in friends {
+                        
+                        if friend.objectId! == (self.user?.userID)! {
+                            print(friend)
+                            break
+                        }
+                        index++
+                    
+                    }
+                
+                    friends.removeAtIndex(index)
+                    user["friends"] = friends
+                    user.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                    
+                        if success {
+                        
+                            let alertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                                self.navigationController?.popToRootViewControllerAnimated(true)
+                            })
+                            
+                            AlertView.showAlertWithOKAction(self, title: "Success", message: "\(self.user?.username!) was deleted from friends", action: alertAction)
+                            
+                            
+                        
+                        } else {
+                        
+                            if error != nil {
+                            
+                                print("Error: \(error)")
+                                AlertView.showAlertWithOK(self, title: "Error", message: "Somthing went wrong when trying to delete friend")
+                            
+                            } else {
+                            
+                                AlertView.showAlertWithOK(self, title: "Error", message: "Somthing went wrong when connecting to database")
+                                print("Somthing went wrong when connecting to database")
+                            
+                            
+                            }
+                        
+                        }
+                    
+                    
+                    })
+                
+                    
+                
+                
+                
+                
+                
+                
+                }
+            
+            
+            }
+            }
+        })
+        
+    }
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

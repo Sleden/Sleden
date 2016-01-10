@@ -11,12 +11,45 @@ import Parse
 
 class SendSleden{
     
-    let newSleden: Sleden
+    let sleden: Sleden
     
     init(fromUser: User, sledenUser: User, sledenType: SledenType) {
-        self.newSleden = Sleden(fromUser: fromUser, sledenUser: sledenUser , sledenType: sledenType)
+        self.sleden = Sleden(fromUser: fromUser, sledenUser: sledenUser , sledenType: sledenType)
+        sendSleden()
     }
     
+    
+    func sendSleden() {
+        
+        let newSleden = PFObject(className: "Sleden")
+        
+        
+        newSleden["sendtUser"] = self.sleden.fromUser
+        newSleden["sledenUser"] = self.sleden.sledenUser
+        newSleden["sledenType"] = self.sleden.sledenType.rawValue
+
+        
+            
+        newSleden.saveInBackgroundWithBlock { (saved: Bool, error: NSError?) -> Void in
+
+            if saved {
+                
+                print("Sendt a \(self.sleden.sledenType.rawValue) to \(self.sleden.sledenUser.username)")
+                
+                
+            } else {
+                if error != nil {
+                    print("error: \(error)")
+                } else {
+                    print("somthing went wrong")
+                }
+            }
+        }
+        
+        
+    }
+    
+    /*
     convenience init(fromUser: User, sledenUserByUsername: String, sledenType: SledenType) {
         
         let sledenUser = getUser(sledenUserByUsername)
@@ -50,6 +83,6 @@ class SendSleden{
         
         
     }
-    
+    */
     
 }
