@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D9c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jGR-9L-scY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D13b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jGR-9L-scY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -246,13 +246,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleden: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZB-h1-r6V">
-                                    <rect key="frame" x="8" y="83.5" width="59" height="20.5"/>
+                                    <rect key="frame" x="8" y="83" width="59" height="21"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleden: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxe-jI-K1l">
-                                    <rect key="frame" x="253" y="83" width="59" height="20.5"/>
+                                    <rect key="frame" x="253" y="83" width="59" height="21"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -275,7 +275,7 @@
                                 <rect key="frame" x="0.0" y="132" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tQg-0G-fu0" id="wcA-Hg-SOp">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="132-Dg-Ava">
@@ -321,7 +321,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Be-x2-tgd" id="OkU-x8-wCh">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-YT-LEB">
@@ -331,7 +331,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="t5W-Pi-RDR">
-                                            <rect key="frame" x="8" y="7" width="52" height="28.5"/>
+                                            <rect key="frame" x="8" y="7" width="52" height="29"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -345,7 +345,7 @@
                                 <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l9A-kJ-0Mq" id="Lhk-mo-8KH">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -371,7 +371,7 @@
             </objects>
             <point key="canvasLocation" x="481" y="1891"/>
         </scene>
-        <!--Detail Venn View Controller-->
+        <!--Navn-->
         <scene sceneID="EHt-7o-gmc">
             <objects>
                 <viewController id="RPv-Wz-pBJ" customClass="detailVennViewController" customModule="Sleden" customModuleProvider="target" sceneMemberID="viewController">
@@ -383,25 +383,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp5-em-dJ9">
-                                <rect key="frame" x="20" y="222" width="87" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4qs-6w-aPO"/>
-                                </constraints>
-                                <state key="normal" title="Send Sleden"/>
-                                <connections>
-                                    <action selector="sendSledenButton:" destination="RPv-Wz-pBJ" eventType="touchUpInside" id="bDd-go-okg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXc-Oq-rvB">
-                                <rect key="frame" x="217" y="222" width="83" height="30"/>
-                                <state key="normal" title="Send Vågen"/>
-                                <connections>
-                                    <action selector="sendVaagenButton:" destination="RPv-Wz-pBJ" eventType="touchUpInside" id="fuk-UR-u92"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vågen: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2G-PN-Wnu">
-                                <rect key="frame" x="20" y="149" width="141" height="33"/>
+                                <rect key="frame" x="20" y="151" width="141" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="CBF-oV-aKL"/>
                                 </constraints>
@@ -410,7 +393,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleden: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnZ-Zd-CV5">
-                                <rect key="frame" x="20" y="108" width="122" height="33"/>
+                                <rect key="frame" x="20" y="110" width="122" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="7Zb-Xe-stn"/>
                                     <constraint firstAttribute="width" constant="122" id="i4W-YN-Rog"/>
@@ -419,7 +402,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="did-Xe-mtW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="did-Xe-mtW">
                                 <rect key="frame" x="0.0" y="478" width="320" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                 <state key="normal" title="Delete Friend">
@@ -429,21 +412,39 @@
                                     <action selector="deleteFriendButton:" destination="RPv-Wz-pBJ" eventType="touchUpInside" id="7Pr-eB-v3k"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp5-em-dJ9">
+                                <rect key="frame" x="20" y="266" width="111" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Send Sleden"/>
+                                <connections>
+                                    <action selector="sendSledenButton:" destination="RPv-Wz-pBJ" eventType="touchUpInside" id="bDd-go-okg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXc-Oq-rvB">
+                                <rect key="frame" x="194" y="266" width="106" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Send Vågen"/>
+                                <connections>
+                                    <action selector="sendVaagenButton:" destination="RPv-Wz-pBJ" eventType="touchUpInside" id="fuk-UR-u92"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fp5-em-dJ9" firstAttribute="centerY" secondItem="ZTW-zS-nfw" secondAttribute="centerY" id="7I4-Zp-ZwQ"/>
+                            <constraint firstItem="HRy-jU-1o4" firstAttribute="top" secondItem="did-Xe-mtW" secondAttribute="bottom" constant="6" id="Cek-9M-c8X"/>
+                            <constraint firstAttribute="trailing" secondItem="did-Xe-mtW" secondAttribute="trailing" id="Dh7-1V-an3"/>
                             <constraint firstItem="bnZ-Zd-CV5" firstAttribute="leading" secondItem="V2G-PN-Wnu" secondAttribute="leading" id="Lt2-gU-vE6"/>
-                            <constraint firstItem="HRy-jU-1o4" firstAttribute="top" secondItem="fp5-em-dJ9" secondAttribute="bottom" constant="267" id="MyX-oP-HbV"/>
+                            <constraint firstItem="did-Xe-mtW" firstAttribute="leading" secondItem="ZTW-zS-nfw" secondAttribute="leading" id="MKA-1t-XbE"/>
                             <constraint firstItem="V2G-PN-Wnu" firstAttribute="top" secondItem="bnZ-Zd-CV5" secondAttribute="bottom" constant="8" symbolic="YES" id="NYR-3E-Tdu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yXc-Oq-rvB" secondAttribute="trailing" constant="4" id="d82-d6-aQC"/>
-                            <constraint firstItem="fp5-em-dJ9" firstAttribute="top" secondItem="V2G-PN-Wnu" secondAttribute="bottom" constant="40" id="fJV-Cx-aoK"/>
-                            <constraint firstItem="yXc-Oq-rvB" firstAttribute="baseline" secondItem="fp5-em-dJ9" secondAttribute="baseline" id="rEd-s8-twt"/>
-                            <constraint firstItem="V2G-PN-Wnu" firstAttribute="leading" secondItem="fp5-em-dJ9" secondAttribute="leading" id="tA9-Be-YOO"/>
+                            <constraint firstItem="yXc-Oq-rvB" firstAttribute="centerY" secondItem="ZTW-zS-nfw" secondAttribute="centerY" id="OOn-eJ-ra2"/>
+                            <constraint firstAttribute="trailing" secondItem="yXc-Oq-rvB" secondAttribute="trailing" constant="20" id="lAu-ab-qHr"/>
                             <constraint firstItem="bnZ-Zd-CV5" firstAttribute="leading" secondItem="ZTW-zS-nfw" secondAttribute="leadingMargin" constant="4" id="tVi-wZ-HmH"/>
                             <constraint firstItem="V2G-PN-Wnu" firstAttribute="centerY" secondItem="ZTW-zS-nfw" secondAttribute="centerY" constant="-118.5" id="uTj-em-MMe"/>
+                            <constraint firstItem="fp5-em-dJ9" firstAttribute="leading" secondItem="ZTW-zS-nfw" secondAttribute="leading" constant="20" id="wGH-it-u3g"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fAT-uw-so0"/>
+                    <navigationItem key="navigationItem" title="Navn" id="fAT-uw-so0"/>
                     <connections>
                         <outlet property="antallSledenLabel" destination="bnZ-Zd-CV5" id="CVJ-ke-7FV"/>
                         <outlet property="antallVaagenLabel" destination="V2G-PN-Wnu" id="P5a-My-zT4"/>

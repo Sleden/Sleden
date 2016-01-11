@@ -14,21 +14,22 @@ class FrindsTableViewController: UITableViewController {
     var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0,150,150)) as UIActivityIndicatorView
     
     
-    var user = ""
+    var user: String?
     
     var GetFriendsObject: GetFriends = GetFriends()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        user = (PFUser.currentUser()?.username)!
-        GetFriendsObject.getFriends(tableView, actInt: actInd)
-        tableView.reloadData()
+        configureView()
         
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
         
         tableView.backgroundView = BackgroundView()
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name: "load", object: nil)
       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,25 +40,28 @@ class FrindsTableViewController: UITableViewController {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        GetFriendsObject.getFriends(tableView, actInt: actInd)
-        tableView.reloadData()
-    }
-
-    
-    
-    override func viewWillAppear(animated: Bool) {
+    func configureView() {
+        
         
         if PFUser.currentUser()?.username != user {
             user = PFUser.currentUser()!.username!
             GetFriendsObject.myFriends = []
             GetFriendsObject.getFriends(tableView, actInt: actInd)
+            GetFriendsObject.findIfUserIsDeleted(tableView)
             tableView.reloadData()
         } else {
             GetFriendsObject.getFriends(tableView, actInt: actInd)
+            GetFriendsObject.findIfUserIsDeleted(tableView)
             tableView.reloadData()
         }
+
         
+        
+        
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        configureView()
     }
     
 
@@ -66,13 +70,22 @@ class FrindsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: - Refresh Control and Updating
+    
     func refresh(refreshControl: UIRefreshControl) {
         // Do some reloading of data and update the table view's data source
         // Fetch more objects from a web service, for example...
-        GetFriendsObject.getFriends(tableView, actInt: actInd)
-        self.tableView.reloadData()
+        configureView()
         refreshControl.endRefreshing()
     }
+    
+    func loadList(notification: NSNotification) {
+        
+        configureView()
+        
+    }
+    
 
     // MARK: - Table view data source
 

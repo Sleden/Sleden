@@ -44,6 +44,7 @@ class AddFriends: UIViewController {
     
     @IBAction func cancelButton(sender: AnyObject) {
         
+        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
         self.dismissViewControllerAnimated(true, completion: nil)
         
         

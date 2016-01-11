@@ -45,7 +45,7 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // Gjør slik at text field forsvinner når man trykker enter. 
+    // Gjør slik at keyboardet forsvinner når man trykker enter. 
     // Må også ha med UITextFieldDelegate som superclass og self.textfield.delegate = self for at det skal fungere.
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -66,9 +66,7 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
         if (username?.utf16.count < 4 || password?.utf16.count < 5){
             
             // Gir feilmeding hvis brukernavnet eller passordet er for kort
-            let alert = UIAlertController(title: "Invalid", message:"Username must be greater then 4 and Password must be greater then then 5.", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-            self.presentViewController(alert, animated: true){}
+            AlertView.showAlertWithOK(self, title: "Invalide", message: "Username must be greater then 4 and Password must be greater then then 5.")
             
         } else {
             
@@ -82,8 +80,8 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
                 
                 // Sjekker om brukeren finnes, og at passordet er rett
                 if ((user) != nil){
-                    let alert = UIAlertController(title: "Success", message:"Logged In", preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default) { alertAction in
+                    
+                    let alertAction = UIAlertAction(title: "OK", style: .Default) { alertAction in
                         
                         // Hvis passord og brukernavn stemmer lukkes innloggingsvinduet
                         print("Did log in user")
@@ -92,17 +90,14 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
                         self.dismissViewControllerAnimated(true, completion: nil)
                         
                         
-                    })
+                    }
                     
-                    // Setter success meldingen for fulført innlogging
-                    self.presentViewController(alert, animated: true){}
+                    AlertView.showAlertWithOKAction(self, title: "Success", message: "Logged Inn", action: alertAction)
                     
                 } else {
                     
                     // Gir feilmelding hvis brukernavnet eller passordet er feil.
-                    let alert = UIAlertController(title: "Invalide", message:"\(error!.localizedDescription)", preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-                    self.presentViewController(alert, animated: true){}
+                    AlertView.showAlertWithOK(self, title: "Invalide", message: "\(error!.localizedDescription)")
                 }
             })
             

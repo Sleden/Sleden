@@ -17,7 +17,7 @@ struct TextViewDesigne {
     
     static func addDesigne(textField: UITextField) {
         
-        textField.layer.cornerRadius = CGFloat(Float(21.0))
+        textField.layer.cornerRadius = CGFloat(Float(23.0))
         textField.font = UIFont(name: "Helvetica", size: 22.0)
         //textField.placeholder
         /*
@@ -30,9 +30,10 @@ struct TextViewDesigne {
         textField.layer.shadowRadius = 1.0
         
         */
-        textField.layer.opacity = 0.9
+        
         textField.textRectForBounds(CGRect(x: 5, y: 5, width: 5, height: 5))
-        textField.backgroundColor = UIColor.clearColor()
+        textField.layer.opacity = 0.3
+        //textField.backgroundColor = UIColor.clearColor()
 
 
     }

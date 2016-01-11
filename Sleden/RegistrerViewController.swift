@@ -60,25 +60,17 @@ class RegistrerViewController: UIViewController, UITextFieldDelegate {
         if (username == nil || password == nil || email == nil){
             
             // gir ut alert hvis en av dem er det!
-            let alert = UIAlertController(title: "Invalid", message:"Username, password or email is empty", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-            self.presentViewController(alert, animated: true){}
-            
+            AlertView.showAlertWithOK(self, title: "Invalide", message: "Username, password or email is empty")
             return
             
         }
         
-        // TODO: Lage en egen klasse for alertene slik at det ikke blir så mye lik kode!
-        
+            
         // Gir ut alert hvis passordet, brukernavnet eller emailen er for korte
         if (username?.utf16.count < 4 || password?.utf16.count < 5){
-            let alert = UIAlertController(title: "Invalid", message:"Username must be greater then 4 and Password must be greater then then 5.", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-            self.presentViewController(alert, animated: true){}
+            AlertView.showAlertWithOK(self, title: "Invalide", message: "Username must be greater then 4 and Password must be greater then then 5.")
         } else if(email?.utf16.count < 8){
-            let alert = UIAlertController(title: "Invalid", message:"The email you typed was less then 8 caracters", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-            self.presentViewController(alert, animated: true){}
+            AlertView.showAlertWithOK(self, title: "Invalide", message: "The email you typed was less then 8 caracters")
             
             // Hvis alle feltene er lange nok startes animasjonen av 
             // det spinnende hjulet og vi sender query til parse
@@ -110,24 +102,19 @@ class RegistrerViewController: UIViewController, UITextFieldDelegate {
                 if ((error) != nil){
                     
                     // Viser en alert hvis en error er passert tilbake
-                    let alert = UIAlertController(title: "Invalide", message:"\(error!.localizedDescription)", preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-                    self.presentViewController(alert, animated: true){}
+                    AlertView.showAlertWithOK(self, title: "Invalide", message: "\(error!.localizedDescription)")
                     
                 } else {
                     
+                    let alertAction = UIAlertAction(title: "OK", style: .Default, handler: { (UIAlertAction) -> Void in
+                        
+                        // tar brukeren tilbake til loginn skjermen (husk at det er en module suege, altså viewt er på toppen av de forfige viewt. Dermed er det likt som det var når vi trykket REGISTRER)
+                        self.dismissViewControllerAnimated(true, completion: nil)
+
+                    })
                     // Hvis alt er bra, vil en alert vise success og bruker vil bli tatt tilbake til log inn siden.
-                    let alert = UIAlertController(title: "Success", message:"User \(username!) Created", preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default) { alertAction in
-                    
-                    // tar brukeren tilbake til loginn skjermen (husk at det er en module suege, altså viewt er på toppen av de forfige viewt. Dermed er det likt som det var når vi trykket REGISTRER)
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                        
-                        
-                })
-                self.presentViewController(alert, animated: true){}
-                    
-                    
+                    AlertView.showAlertWithOKAction(self, title: "Success", message: "User \(username!) Created", action: alertAction)
+
                 }
                 
                 

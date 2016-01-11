@@ -58,7 +58,6 @@ class GetFriends {
                                         usersThatIsContained.append(friend)
                                     }
                                     
-                                    // TODO: Finne en måte å sjekke om brukere er slettet fra venner
                                     
                                     // TODO: Bør bruke en self.myFriends.contains(user), men den endrer append funksjonen
                                     
@@ -129,9 +128,55 @@ class GetFriends {
         //}
         
         let queryFriends = PFQuery(className: "Friends")
-        queryFriends.whereKey("UserID", equalTo: (PFUser.currentUser()?.objectId)!)
         
+        queryFriends.whereKey("UserID", containedIn: [(PFUser.currentUser()?.objectId)!, newFriend.objectId!])
         queryFriends.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            let currentUser = PFUser.currentUser()!
+            
+            if let objects = objects {
+                
+                if objects.count == 2 {
+                    
+                    
+                    
+                    if objects[0].objectId == currentUser.objectId {
+                        
+                        self.addFriendToDatabase(currentUser, newFriend: newFriend, friendObject: objects[0], view:  view)
+                        self.addFriendToDatabase(newFriend, newFriend: currentUser, friendObject: objects[1], view: view)
+                        
+                    } else {
+                        self.addFriendToDatabase(currentUser, newFriend: newFriend, friendObject: objects[1], view: view)
+                        self.addFriendToDatabase(newFriend, newFriend: currentUser, friendObject: objects[0], view: view)
+                    }
+                    
+                    
+                } else if objects.count == 1 {
+                    
+                    if objects[0] == currentUser.objectId {
+                        
+                        self.addFriendToDatabase(currentUser, newFriend: newFriend, friendObject: objects[0], view: view)
+                        self.createAndAddFriendToDatabase(newFriend, newFriend: currentUser, view: view)
+                        
+                    } else {
+                        
+                        self.addFriendToDatabase(newFriend, newFriend: currentUser, friendObject: objects[0], view: view)
+                        self.createAndAddFriendToDatabase(currentUser, newFriend: newFriend, view: view)
+                        
+                    }
+                    
+                }
+                
+                
+            } else {
+                
+                if error != nil {
+                    print("Error: \(error)")
+                } else {
+                    print("Noe gikk galt med henting av brukere i Friends tabellen")
+                }
+                
+            }
             
             
             if error == nil {
@@ -194,7 +239,6 @@ class GetFriends {
                     
                 }
             } else {
-                print("her?")
                 print(error)
             }
             
@@ -203,6 +247,112 @@ class GetFriends {
         
         
     }
+    
+
+    static func createAndAddFriendToDatabase(user: PFUser, newFriend: PFUser, view: UIViewController) {
+        
+        let newObject = PFObject(className: "Friends")
+        let friends: [PFUser] = [newFriend]
+        let friendRequests: [AnyObject] = []
+        
+        newObject["friends"] = friends
+        newObject["UserID"] = (PFUser.currentUser()?.objectId)!
+        newObject["friendRequests"] = friendRequests
+        print("ender her?")
+        newObject.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+            
+            if (success) {
+                AlertView.showAlertWithOK(view, title: "Success", message: "Added friend: \(newFriend.username!)")
+                print("La til venn, og nytt felt")
+                
+            }
+            
+            if error != nil {
+                print("funket ikke!!")
+                print(error)
+                
+                
+            }
+        })
+
+        
+    }
+    
+    
+    static func addFriendToDatabase(user: PFUser, newFriend: PFUser, friendObject: PFObject, view: UIViewController){
+        if var friends = friendObject["friends"] as? [PFUser] {
+            for friend in friends {
+                if friend.objectId == newFriend.objectId {
+                    
+                    AlertView.showAlertWithOK(view, title: "Invalide", message: "Bruker alerede venn")
+                    print("Bruker alerede venn")
+                    return
+                    
+                }
+            }
+            
+            friends.append(newFriend)
+            friendObject["friends"] = friends
+            friendObject.saveInBackground()
+            AlertView.showAlertWithOK(view, title: "Success", message: "Added friend: \(newFriend.username!)")
+            print("Added friend: \(newFriend.username!))")
+            
+        } else {
+            print("feiler her")
+        }
+
+    }
+    
+    
+    
+    
+    
+    
+    func findIfUserIsDeleted(table: UITableView) {
+        print("Finf if user is deleted")
+        let query = PFQuery(className: "Friends")
+        query.whereKey("UserID", equalTo: (PFUser.currentUser()?.objectId)!)
+        query.getFirstObjectInBackgroundWithBlock({ (user: PFObject?, error: NSError?) -> Void in
+            
+            if let user = user {
+                
+                var index = 0
+                
+                for localFriend in self.myFriends {
+                    
+                    var contained = false
+                    
+                    for dbFriend in (user["friends"] as? [PFUser])! {
+                        if localFriend.userID == dbFriend.objectId{
+                            contained = true
+                            break
+                        }
+                        
+                    }
+                    
+                    if !contained {
+                        self.deleteFriendFromArrayWithIndex(index, table: table)
+                    }
+                    index++
+                
+                }
+                
+            } else {
+                
+                if error != nil {
+                    print(error)
+                } else {
+                    print("There is no users")
+                }
+                
+                
+            }
+            
+        })
+        
+        
+    }
+    
     
     
     func deleteFriendFromArrayWithUsername(username: String, table: UITableView) {
