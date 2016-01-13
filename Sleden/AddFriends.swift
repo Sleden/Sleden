@@ -23,18 +23,19 @@ class AddFriends: UIViewController {
         view.backgroundColor = UIColor.clearColor()
         view.opaque = false
         
+        // Designe for å legge til den gjennomsiktige bakgrunden.
         if !UIAccessibilityIsReduceTransparencyEnabled() {
             
             let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            //always fill the view
+            
             blurEffectView.frame = self.view.bounds
             blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
             
             self.view.insertSubview(blurEffectView, atIndex: 0) //if you have more UIViews, use an insertSubview API to place it where needed
         }
         else {
-            self.view.backgroundColor = UIColor.blackColor()
+            //self.view.backgroundColor = UIColor.blackColor()
         }
 
     
