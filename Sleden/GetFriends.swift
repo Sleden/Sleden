@@ -18,18 +18,22 @@ class GetFriends {
         let queryFriends = PFQuery(className: "Friends")
         queryFriends.whereKey("UserID", equalTo: (PFUser.currentUser()?.objectId)!)
         actInt.startAnimating()
-        
         queryFriends.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
             
             defer {
                 actInt.stopAnimating()
             }
+            
             if error == nil {
                 if let user = objects?[0]{
                     var usersThatIsContained: [PFUser] = []
                     if let friends = user["friends"] as? [PFUser] {
                         
                         for friend in friends {
+                            
+                            // Kan endre denne queryen i starten ved å kalle includeKey for queryFriends. Denne vil da hente ned alle vennen i arrayen
+                            // istedenfor at du må hente dem her.
+                            
                                 friend.fetchInBackgroundWithBlock({ (thisFriend: PFObject?, error: NSError?) -> Void in
                                 if let thisUser = thisFriend as? PFUser {
                                     

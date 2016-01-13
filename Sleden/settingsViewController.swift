@@ -20,9 +20,6 @@ class settingsViewController: UIViewController {
         
         
         PFUser.logOut()
-        
-        
-        
         self.tabBarController?.selectedIndex = 0
         self.tabBarController?.reloadInputViews()
         
