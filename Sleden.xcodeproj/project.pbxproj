@@ -182,6 +182,7 @@
 				65ABB1EF1C3AAB30002AA32D /* Controllers */,
 				65ABB1841C36ECDB002AA32D /* Modules */,
 				65ABB1831C357A06002AA32D /* Designe */,
+				65D2F4031C4919BE00254FFC /* Slettet */,
 				651786881C33398800D62297 /* Main.storyboard */,
 				6517868E1C33398800D62297 /* Assets.xcassets */,
 				651786901C33398800D62297 /* LaunchScreen.storyboard */,
@@ -255,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */,
-				65ABB18C1C36F364002AA32D /* GetFriends.swift */,
 				65D2F3FF1C4822AC00254FFC /* FriendsModule.swift */,
 				65ABB18F1C36F688002AA32D /* User.swift */,
 				65C6157E1C419AFF00BE3E7F /* Send Sleden */,
@@ -301,6 +301,14 @@
 				655D52DD1C3FFFA50037AD8A /* sendSleden.swift */,
 			);
 			name = "Send Sleden";
+			sourceTree = "<group>";
+		};
+		65D2F4031C4919BE00254FFC /* Slettet */ = {
+			isa = PBXGroup;
+			children = (
+				65ABB18C1C36F364002AA32D /* GetFriends.swift */,
+			);
+			name = Slettet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

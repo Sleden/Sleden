@@ -34,6 +34,11 @@ class FriendsModule {
         for friend in self.myFriends {
             
             if let userID = user.userID where userID == friend.userID {
+                
+                if friend.isFriend != user.isFriend {
+                    friend.isFriend = user.isFriend
+                }
+                
                 return true
             }
         }
@@ -41,6 +46,7 @@ class FriendsModule {
         return false
         
     }
+    
     
     func lookForDeletedFriends(venner: [PFObject]) {
         

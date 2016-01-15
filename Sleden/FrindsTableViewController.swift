@@ -50,25 +50,8 @@ class FrindsTableViewController: UITableViewController {
             user = PFUser.currentUser()!.username!
             self.FriendsObject.myFriends = []
             self.getFriends()
-            
-            /*
-            user = PFUser.currentUser()!.username!
-            GetFriendsObject.myFriends = []
-            GetFriendsObject.getFriends(tableView, actInt: actInd)
-            GetFriendsObject.findIfUserIsDeleted(tableView)
-            tableView.reloadData()
-            */
         } else {
-            
-            
             self.getFriends()
-            
-            
-            /*
-            GetFriendsObject.getFriends(tableView, actInt: actInd)
-            GetFriendsObject.findIfUserIsDeleted(tableView)
-            tableView.reloadData()
-            */
         }
     }
 
@@ -187,7 +170,6 @@ class FrindsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        //return self.GetFriendsObject.myFriends.count
         
         if section == 1 {
             return self.FriendsObject.friendRequests().count
@@ -218,7 +200,6 @@ class FrindsTableViewController: UITableViewController {
         } else {
             
             let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TableViewCell
-            //cell.nameLabel.text = self.GetFriendsObject.myFriends[indexPath.row].username
             cell.nameLabel.text = self.FriendsObject.friends()[indexPath.row].username!
             cell.profileImageView.image = UIImage(named: "bg")
             return cell
@@ -285,22 +266,26 @@ class FrindsTableViewController: UITableViewController {
         
         self.tableView.reloadData()
         
-        
+        print("newUser")
         let addFriendQuery = PFQuery(className: "Friends2")
         if let currentUser = PFUser.currentUser(),
             let newUserID = newFriend.userID {
                 
-                let newUser = PFUser(withoutDataWithClassName: "User", objectId: newUserID)
+                let newUser = PFUser(withoutDataWithClassName: "_User", objectId: newUserID)
                 
                 addFriendQuery.whereKey("User1", containedIn: [currentUser, newUser]).whereKey("User2", containedIn: [currentUser, newUser])
         }
         
         addFriendQuery.getFirstObjectInBackgroundWithBlock { (object: PFObject?, error: NSError?) -> Void in
             
+            print(object)
+            
             if let friendObject = object {
                 if let friendRequestPendingAnyObject = friendObject["FriendRequestPending"], friendRequestPending = friendRequestPendingAnyObject as? Bool  {
                     if friendRequestPending {
                         friendObject["FriendRequestPending"] = false
+                        friendObject.saveInBackground()
+                        
                     }
                 }
             }
@@ -323,8 +308,6 @@ class FrindsTableViewController: UITableViewController {
         if segue.identifier == "tilVenn" {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                
-                //let user = GetFriendsObject.myFriends[indexPath.row]
                 let user = self.FriendsObject.myFriends[indexPath.row]
                 
                 // Sender over objektet som tilsvarer raden som bli klikket i table viewet
