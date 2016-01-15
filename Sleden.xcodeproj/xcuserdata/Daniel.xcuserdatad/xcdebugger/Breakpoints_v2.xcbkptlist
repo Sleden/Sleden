@@ -29,6 +29,7 @@
             timestampString = "474487205.413702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+            bytter-om-friends-tabell
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "init(newUser:isFriend:)"
