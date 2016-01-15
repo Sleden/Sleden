@@ -34,12 +34,7 @@
             endingLineNumber = "22"
             landmarkName = "init(newUser:isFriend:)"
             landmarkType = "5">
-=======
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "User"
-            landmarkType = "3">
->>>>>>> local
+
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
