@@ -10,9 +10,8 @@ import Foundation
 import Parse
 import CoreData
 
-class User{
+class User {
     
-    // Properties som kommer fra PFUser
     
     var userID: String?
     var username: String?
@@ -22,7 +21,10 @@ class User{
     
     init(newUser: PFUser, isFriend: userRelation?){
         
+        
+        
         // Sjekker at brukernavnet og brukerID en som hentes fra databasen faktisk finnes (kan lagra bruker uten unikt brukernavn)
+        
         if let username = newUser["username"] as? String {
             self.username = username
         } else {
@@ -38,6 +40,7 @@ class User{
         
         // Setter hvilken type sammenheng brukeren har med denne brukeren
         self.isFriend = isFriend
+        
         
         
         

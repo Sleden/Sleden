@@ -36,6 +36,8 @@ class detailVennViewController: UIViewController {
         // Setter antall sleden og vaagen
         getSledenVaagen()
         
+        
+        
         if let username = self.user?.username {
             self.title = username
         }
@@ -49,6 +51,29 @@ class detailVennViewController: UIViewController {
             UIBarButtonItem.appearance().setTitleTextAttributes(barButtonAttributesDictionary, forState: .Normal)
         }
     }
+    
+    
+    func getFriendInformation() {
+        
+        let friendQuery = PFQuery(className: "Friends2")
+        
+        if let currentUser = PFUser.currentUser(),
+            let thisUser = user {
+                
+                let thisPFUser = PFObject(withoutDataWithClassName: "User", objectId: thisUser.userID!)
+                
+                friendQuery.whereKey("User1", containedIn: [currentUser, thisPFUser]).whereKey("User2", containedIn: [currentUser, thisPFUser])
+        }
+        
+        
+        
+        
+        let sledenQuery = PFQuery(className: "Sleden")
+        
+        
+        
+    }
+    
     
     
     func getSledenVaagen(){
@@ -128,6 +153,52 @@ class detailVennViewController: UIViewController {
     
     @IBAction func deleteFriendButton(sender: AnyObject) {
         
+        
+        let friendsQuery1 = PFQuery(className: "Friends2")
+        let friendsQuery2 = PFQuery(className: "Friends2")
+        
+        if let currentUser = PFUser.currentUser() {
+        
+            friendsQuery1.whereKey("User1", equalTo: currentUser)
+            friendsQuery2.whereKey("User2", equalTo: currentUser)
+            
+        }
+        
+        let deleteFriendQuery = PFQuery.orQueryWithSubqueries([friendsQuery1, friendsQuery2])
+        
+        deleteFriendQuery.findObjectsInBackgroundWithBlock( { (objects: [PFObject]?, error: NSError?) -> Void in
+            if let friendObjects = objects {
+                
+                for friendObject in friendObjects {
+                    
+                    if friendObject["User1"].objectId == self.user?.userID || friendObject["User2"].objectId == self.user?.userID {
+                        friendObject.deleteInBackground()
+                        // alert actionen gjør slik at brukeren går automatisk tilbake til tabellen med venner.
+                        let alertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                            self.navigationController?.popToRootViewControllerAnimated(true)
+                        })
+                        
+                        AlertView.showAlertWithOKAction(self, title: "Success", message: "\((self.user?.username)!) was deleted from friends", action: alertAction)
+                        print("\((self.user?.username)!) was deleted from friends")
+
+                    }
+                    
+                }
+                
+                
+                
+                
+            }
+        })
+        
+        
+        
+        
+        
+        
+        
+        /*
+        
         // Henter først ut informasjon om brukeren vi ser på fra Parse
         let thisUserQuery = PFUser.query()
         thisUserQuery?.whereKey("objectId", equalTo: self.user!.userID!)
@@ -190,10 +261,10 @@ class detailVennViewController: UIViewController {
             }
         })
         
-        
+        */
     }
     
-    
+    /*
     /*
     Sletter vennen med userUDFriend fra vennelisten til userIDRow.
     */
@@ -251,7 +322,7 @@ class detailVennViewController: UIViewController {
     
   
     
-    
+    */
     
     
     

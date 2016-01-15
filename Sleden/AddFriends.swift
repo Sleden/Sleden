@@ -85,6 +85,53 @@ class AddFriends: UIViewController {
         }
         
         
+        let newFriendQuery = PFUser.query()
+        newFriendQuery?.whereKey("username", equalTo: username)
+        
+        let isAlreadyFriendQuery1 = PFQuery(className: "Friends2")
+        isAlreadyFriendQuery1.whereKey("User1", matchesQuery: newFriendQuery!).whereKey("User2", equalTo: PFUser.currentUser()!)
+        
+        let isAlreadyFriendQuery2 = PFQuery(className: "Friends2")
+        isAlreadyFriendQuery2.whereKey("User2", matchesQuery: newFriendQuery!).whereKey("User1", equalTo: PFUser.currentUser()!)
+        
+        let query = PFQuery.orQueryWithSubqueries([isAlreadyFriendQuery1, isAlreadyFriendQuery2])
+        
+        query.getFirstObjectInBackgroundWithBlock { (row: PFObject?, error: NSError?) -> Void in
+            
+            if row != nil {
+                
+                AlertView.showAlertWithOK(self, title: "Error", message: "Du er allerede venn med \(username)")
+                if error != nil {
+                    print("Error: \(error)")
+                }
+                
+            } else {
+                
+                let newFriendRow = PFObject(className: "Friends2")
+                
+                newFriendQuery?.getFirstObjectInBackgroundWithBlock({ (returnRow: PFObject?, error: NSError?) -> Void in
+                    
+                    if let userUnwrapped = returnRow,
+                        user = userUnwrapped as? PFUser {
+                        
+                        newFriendRow["User1"] = PFUser.currentUser()!
+                        newFriendRow["User2"] = user
+                            
+                        newFriendRow["FriendRequestPending"] = true
+                        newFriendRow["FriendRequestFrom"] = PFUser.currentUser()!
+
+                        newFriendRow.saveInBackground()
+                        
+                    }
+                })
+            }
+        }
+        
+        
+        
+        
+        
+        /*
         let query = PFUser.query()
         query?.whereKey("username", equalTo: username)
         query?.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
@@ -119,7 +166,7 @@ class AddFriends: UIViewController {
             
             
         })
-        
+        */
         
         
         

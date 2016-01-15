@@ -9,8 +9,11 @@
 import Foundation
 
 
-enum userRelation {
-    case Friend, SendtFriendRequest, RecivedFriendRequest, notFriends
+enum userRelation: String {
+    case Friend = "Friend"
+    case SendtFriendRequest = "Friend Request Sendt"
+    case RecivedFriendRequest = "Accept"
+    case notFriends = "Not Friends"
     
     // Muligheter for funksjoner
     func acceptFriendRequest() {

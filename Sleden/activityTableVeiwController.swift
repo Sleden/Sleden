@@ -16,11 +16,6 @@ class activityTableVeiwController: UITableViewController {
     @IBOutlet weak var sledenLabel: UILabel?
     @IBOutlet weak var vaagenLabel: UILabel?
     
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

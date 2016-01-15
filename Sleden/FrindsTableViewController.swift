@@ -16,7 +16,8 @@ class FrindsTableViewController: UITableViewController {
     
     var user: String?
     
-    var GetFriendsObject: GetFriends = GetFriends()
+    //var GetFriendsObject: GetFriends = GetFriends()
+    var FriendsObject = FriendsModule(myFriends: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class FrindsTableViewController: UITableViewController {
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
         
-        tableView.backgroundView = BackgroundView()
+        //tableView.backgroundView = BackgroundView()
         
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name: "load", object: nil)
@@ -43,21 +44,32 @@ class FrindsTableViewController: UITableViewController {
     func configureView() {
         
         
+        
         if PFUser.currentUser()?.username != user {
+            
+            user = PFUser.currentUser()!.username!
+            self.FriendsObject.myFriends = []
+            self.getFriends()
+            
+            /*
             user = PFUser.currentUser()!.username!
             GetFriendsObject.myFriends = []
             GetFriendsObject.getFriends(tableView, actInt: actInd)
             GetFriendsObject.findIfUserIsDeleted(tableView)
             tableView.reloadData()
+            */
         } else {
+            
+            
+            self.getFriends()
+            
+            
+            /*
             GetFriendsObject.getFriends(tableView, actInt: actInd)
             GetFriendsObject.findIfUserIsDeleted(tableView)
             tableView.reloadData()
+            */
         }
-
-        
-        
-        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -69,6 +81,85 @@ class FrindsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    // MARK: - Get Friends frunctions
+    
+    func getFriends() {
+        
+        actInd.startAnimating()
+        
+        let friendsQuery1 = PFQuery(className: "Friends2")
+        let friendsQuery2 = PFQuery(className: "Friends2")
+        
+        friendsQuery1.whereKey("User1", equalTo: PFUser.currentUser()!)
+        friendsQuery2.whereKey("User2", equalTo: PFUser.currentUser()!)
+        
+        
+        
+        let query = PFQuery.orQueryWithSubqueries([friendsQuery1, friendsQuery2])
+        query.findObjectsInBackgroundWithBlock { (returnRows: [PFObject]?, error: NSError?) -> Void in
+            
+            self.actInd.stopAnimating()
+            
+            if let rows = returnRows {
+                
+                for row in rows {
+                    
+                    if let user1AnyObject = row["User1"], user1 = user1AnyObject as? PFUser,
+                        let user2AnyObject = row["User2"], user2 = user2AnyObject as? PFUser,
+                        let friendRequestAnyObject = row["FriendRequestPending"], friendRequest = friendRequestAnyObject as? Bool {
+                            
+                            var friendRelation: userRelation = .Friend
+                            
+                            if friendRequest {
+                                if let friendRequestFromAnyObject = row["FriendRequestFrom"], friendRequestFrom = friendRequestFromAnyObject as? PFUser {
+                                    if friendRequestFrom == PFUser.currentUser() {
+                                        friendRelation = userRelation.SendtFriendRequest
+                                    } else {
+                                        friendRelation = userRelation.RecivedFriendRequest
+                                    }
+                                }
+                            }
+                            
+                            
+                            
+                            if user1 == PFUser.currentUser()! {
+                                self.fetchDataForUser(user2, friendRelation: friendRelation)
+                            } else {
+                                self.fetchDataForUser(user1, friendRelation: friendRelation)
+                            }
+                    }
+                }
+                
+                self.FriendsObject.lookForDeletedFriends(rows)
+                self.tableView.reloadData()
+                
+            } else {
+            
+                print("Bruker har ingen venner")
+                
+                if error != nil {
+                    print("Error: \(error)")
+                }
+                
+            }
+            
+            
+        }
+    }
+    
+    
+    func fetchDataForUser(user: PFUser, friendRelation: userRelation) {
+        user.fetchIfNeededInBackgroundWithBlock({ (object: PFObject?, error: NSError?) -> Void in
+            if let userPFObject = object, user = userPFObject as? PFUser {
+                self.FriendsObject.addFriendToMyFriendsArray(user, friendRelation: friendRelation)
+                self.tableView.reloadData()
+            }
+        })
+    }
+    
     
     
     // MARK: - Refresh Control and Updating
@@ -91,21 +182,60 @@ class FrindsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.GetFriendsObject.myFriends.count
+        //return self.GetFriendsObject.myFriends.count
+        
+        if section == 1 {
+            return self.FriendsObject.friendRequests().count
+        } else {
+            return self.FriendsObject.friends().count
+        }
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TableViewCell
-        cell.nameLabel.text = self.GetFriendsObject.myFriends[indexPath.row].username
-        cell.profileImageView.image = UIImage(named: "bg")
-        return cell
+        
+        if indexPath.section == 1 {
+            if self.FriendsObject.friendRequests()[indexPath.row].isFriend! == userRelation.SendtFriendRequest {
+                let cellRequest = tableView.dequeueReusableCellWithIdentifier("cellSendtRequest", forIndexPath: indexPath) as! TableViewCellRequest
+                cellRequest.nameLabel.text = self.FriendsObject.friendRequests()[indexPath.row].username!
+                cellRequest.typeOfRequestLabel.text = self.FriendsObject.friendRequests()[indexPath.row].isFriend?.rawValue
+                return cellRequest
+            } else {
+                let cellRequest = tableView.dequeueReusableCellWithIdentifier("cellRecivedRequest", forIndexPath: indexPath) as! TableViewCellRequest
+                cellRequest.nameLabel.text = self.FriendsObject.friendRequests()[indexPath.row].username!
+                
+                cellRequest.acceptButton.tag = indexPath.row
+                cellRequest.acceptButton.addTarget(self, action: "addFriend:", forControlEvents: .TouchUpInside)
+                return cellRequest
+
+            }
+            
+        } else {
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TableViewCell
+            //cell.nameLabel.text = self.GetFriendsObject.myFriends[indexPath.row].username
+            cell.nameLabel.text = self.FriendsObject.friends()[indexPath.row].username!
+            cell.profileImageView.image = UIImage(named: "bg")
+            return cell
+            
+        }
     }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "Friend Requests"
+        } else {
+            return "Friends"
+        }
+    }
+    
+    
+    
     
 
     /*
@@ -142,6 +272,45 @@ class FrindsTableViewController: UITableViewController {
         return true
     }
     */
+    
+    
+    //MARK: - Table view actions
+    
+    
+    @IBAction func addFriend(sender: UIButton) {
+        
+        let newFriend = self.FriendsObject.friendRequests()[sender.tag]
+        
+        newFriend.isFriend = .Friend
+        
+        self.tableView.reloadData()
+        
+        
+        let addFriendQuery = PFQuery(className: "Friends2")
+        if let currentUser = PFUser.currentUser(),
+            let newUserID = newFriend.userID {
+                
+                let newUser = PFUser(withoutDataWithClassName: "User", objectId: newUserID)
+                
+                addFriendQuery.whereKey("User1", containedIn: [currentUser, newUser]).whereKey("User2", containedIn: [currentUser, newUser])
+        }
+        
+        addFriendQuery.getFirstObjectInBackgroundWithBlock { (object: PFObject?, error: NSError?) -> Void in
+            
+            if let friendObject = object {
+                if let friendRequestPendingAnyObject = friendObject["FriendRequestPending"], friendRequestPending = friendRequestPendingAnyObject as? Bool  {
+                    if friendRequestPending {
+                        friendObject["FriendRequestPending"] = false
+                    }
+                }
+            }
+            
+        }
+        
+        
+        
+    }
+    
 
     
     // MARK: - Navigation
@@ -155,7 +324,8 @@ class FrindsTableViewController: UITableViewController {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
-                let user = GetFriendsObject.myFriends[indexPath.row]
+                //let user = GetFriendsObject.myFriends[indexPath.row]
+                let user = self.FriendsObject.myFriends[indexPath.row]
                 
                 // Sender over objektet som tilsvarer raden som bli klikket i table viewet
                 (segue.destinationViewController as! detailVennViewController).user = user

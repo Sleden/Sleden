@@ -45,6 +45,8 @@
 		65ABB1E81C39416A002AA32D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1E71C39416A002AA32D /* BackgroundView.swift */; };
 		65ABB1EE1C395FA6002AA32D /* AddFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABB1ED1C395FA6002AA32D /* AddFriends.swift */; };
 		65C615801C419E1000BE3E7F /* AlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C6157F1C419E1000BE3E7F /* AlerView.swift */; };
+		65D2F4001C4822AC00254FFC /* FriendsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2F3FF1C4822AC00254FFC /* FriendsModule.swift */; };
+		65D2F4021C48F5B700254FFC /* TableViewCellRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2F4011C48F5B700254FFC /* TableViewCellRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		65ABB1E71C39416A002AA32D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		65ABB1ED1C395FA6002AA32D /* AddFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriends.swift; sourceTree = "<group>"; };
 		65C6157F1C419E1000BE3E7F /* AlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlerView.swift; sourceTree = "<group>"; };
+		65D2F3FF1C4822AC00254FFC /* FriendsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsModule.swift; sourceTree = "<group>"; };
+		65D2F4011C48F5B700254FFC /* TableViewCellRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +235,7 @@
 			children = (
 				65ABB1851C36ED42002AA32D /* TableViewCell.swift */,
 				655D52D41C3D26500037AD8A /* activityTableViewCell.swift */,
+				65D2F4011C48F5B700254FFC /* TableViewCellRequest.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			children = (
 				65ABB1911C36F6F1002AA32D /* userRelationEnum.swift */,
 				65ABB18C1C36F364002AA32D /* GetFriends.swift */,
+				65D2F3FF1C4822AC00254FFC /* FriendsModule.swift */,
 				65ABB18F1C36F688002AA32D /* User.swift */,
 				65C6157E1C419AFF00BE3E7F /* Send Sleden */,
 			);
@@ -444,9 +450,11 @@
 				65ABB1E81C39416A002AA32D /* BackgroundView.swift in Sources */,
 				655D52DA1C3FFE2A0037AD8A /* sledenTypeEnum.swift in Sources */,
 				651786851C33398800D62297 /* AppDelegate.swift in Sources */,
+				65D2F4001C4822AC00254FFC /* FriendsModule.swift in Sources */,
 				655D52DC1C3FFF4D0037AD8A /* Sleden.swift in Sources */,
 				65ABB1861C36ED42002AA32D /* TableViewCell.swift in Sources */,
 				65ABB1821C357845002AA32D /* TextViewDesigne.swift in Sources */,
+				65D2F4021C48F5B700254FFC /* TableViewCellRequest.swift in Sources */,
 				65C615801C419E1000BE3E7F /* AlerView.swift in Sources */,
 				65ABB18A1C36F0EE002AA32D /* FrindsTableViewController.swift in Sources */,
 				65ABB1901C36F688002AA32D /* User.swift in Sources */,

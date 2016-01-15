@@ -325,7 +325,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-YT-LEB">
-                                            <rect key="frame" x="68" y="11" width="190" height="21"/>
+                                            <rect key="frame" x="68" y="11" width="219" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -341,13 +341,73 @@
                                     <segue destination="RPv-Wz-pBJ" kind="push" identifier="tilVenn" id="Ifg-nJ-8lP"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" id="l9A-kJ-0Mq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSendtRequest" id="l9A-kJ-0Mq" customClass="TableViewCellRequest" customModule="Sleden" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l9A-kJ-0Mq" id="Lhk-mo-8KH">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3d-rV-VxO">
+                                            <rect key="frame" x="267" y="11" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3r-Tn-Ub8">
+                                            <rect key="frame" x="8" y="11" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="i3r-Tn-Ub8" firstAttribute="top" secondItem="Lhk-mo-8KH" secondAttribute="top" constant="11" id="7L1-ga-chj"/>
+                                        <constraint firstAttribute="bottom" secondItem="L3d-rV-VxO" secondAttribute="bottom" constant="11" id="Ahm-TK-h3o"/>
+                                        <constraint firstItem="L3d-rV-VxO" firstAttribute="top" secondItem="Lhk-mo-8KH" secondAttribute="top" constant="11" id="F9Y-8K-s3O"/>
+                                        <constraint firstItem="i3r-Tn-Ub8" firstAttribute="leading" secondItem="Lhk-mo-8KH" secondAttribute="leading" constant="8" id="hDQ-VJ-SOL"/>
+                                        <constraint firstAttribute="trailing" secondItem="L3d-rV-VxO" secondAttribute="trailing" constant="8" id="oTX-cm-kiu"/>
+                                        <constraint firstItem="i3r-Tn-Ub8" firstAttribute="width" secondItem="L3d-rV-VxO" secondAttribute="width" id="od4-Lr-zdI"/>
+                                        <constraint firstAttribute="bottom" secondItem="i3r-Tn-Ub8" secondAttribute="bottom" constant="11" id="vC8-vl-zId"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="i3r-Tn-Ub8" id="Yzb-Oa-BHI"/>
+                                    <outlet property="typeOfRequestLabel" destination="L3d-rV-VxO" id="TX0-jb-II9"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellRecivedRequest" id="zGt-e2-XvZ" customClass="TableViewCellRequest" customModule="Sleden" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="180" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zGt-e2-XvZ" id="CYc-Uq-qja">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sO8-mG-JX5">
+                                            <rect key="frame" x="8" y="11" width="46" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vz2-Sw-vlB">
+                                            <rect key="frame" x="265" y="7" width="49" height="30"/>
+                                            <state key="normal" title="Accept"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="vz2-Sw-vlB" secondAttribute="trailing" constant="6" id="OQw-4t-Mt8"/>
+                                        <constraint firstItem="vz2-Sw-vlB" firstAttribute="top" secondItem="CYc-Uq-qja" secondAttribute="top" constant="7" id="cRO-Ka-vFB"/>
+                                        <constraint firstAttribute="bottom" secondItem="sO8-mG-JX5" secondAttribute="bottom" constant="11" id="d7R-pj-ceJ"/>
+                                        <constraint firstItem="sO8-mG-JX5" firstAttribute="leading" secondItem="CYc-Uq-qja" secondAttribute="leading" constant="8" id="ewl-wx-knJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="vz2-Sw-vlB" secondAttribute="bottom" constant="6" id="g0J-oP-dJj"/>
+                                        <constraint firstItem="vz2-Sw-vlB" firstAttribute="width" secondItem="sO8-mG-JX5" secondAttribute="width" constant="3" id="gWn-0a-l0g"/>
+                                        <constraint firstItem="sO8-mG-JX5" firstAttribute="top" secondItem="CYc-Uq-qja" secondAttribute="top" constant="11" id="mPh-Da-6UX"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="acceptButton" destination="vz2-Sw-vlB" id="GAt-8P-lri"/>
+                                    <outlet property="nameLabel" destination="sO8-mG-JX5" id="GV1-V9-N8h"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -598,6 +658,6 @@
         <image name="tekstboks" width="827" height="143"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5MH-c7-hEc"/>
+        <segue reference="WTO-Ar-zfd"/>
     </inferredMetricsTieBreakers>
 </document>

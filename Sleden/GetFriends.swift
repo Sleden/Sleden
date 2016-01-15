@@ -235,7 +235,7 @@ class GetFriends {
     
     
     func findIfUserIsDeleted(table: UITableView) {
-        print("Finf if user is deleted")
+        
         let query = PFQuery(className: "Friends")
         query.whereKey("UserID", equalTo: (PFUser.currentUser()?.objectId)!)
         query.getFirstObjectInBackgroundWithBlock({ (user: PFObject?, error: NSError?) -> Void in

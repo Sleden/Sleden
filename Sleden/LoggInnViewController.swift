@@ -89,7 +89,6 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
                         
                         self.dismissViewControllerAnimated(true, completion: nil)
                         
-                        
                     }
                     
                     AlertView.showAlertWithOKAction(self, title: "Success", message: "Logged Inn", action: alertAction)
