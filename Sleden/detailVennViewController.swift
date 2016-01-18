@@ -135,12 +135,38 @@ class detailVennViewController: UIViewController {
         //SendSleden(fromUser: User(newUser: PFUser.currentUser()!), sledenUser: user!, sledenType: SledenType.Sleden)
         print("Sendt sleden to \(user?.username)")
         
+        let pfUser = PFUser(withoutDataWithObjectId: self.user?.userID)
+        
+        let newSleden = PFObject(className: "Sleden")
+        newSleden["sledenUser"] = pfUser
+        newSleden["sendtUser"] = PFUser.currentUser()!
+        newSleden["sledenType"] = "sleden"
+        
+        newSleden.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            
+            if success {
+                
+                AlertView.showAlertWithOK(self, title: "Success", message: "Sendt a sleden to \(self.user?.username!)")
+                
+            } else {
+                if error != nil {
+                    AlertView.showAlertWithOK(self, title: "Error", message: "")
+                }
+            }
+            
+            
+        }
+        
     }
 
     @IBAction func sendVaagenButton(sender: AnyObject) {
         
         //SendSleden(fromUser: User(newUser: PFUser.currentUser()!), sledenUser: user!, sledenType: SledenType.Sleden)
         print("Sendt vaagen to \(user?.username)")
+        
+        
+        
+        
     }
     
     

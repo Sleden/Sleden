@@ -25,11 +25,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("F3e0QsTmOOmmN0K1icNiCLu8DZ4dnGG0Vqq25gXF",
             clientKey: "lSEUs1PkoBtAdNVTjw6cWwAbt1hM3vGxger2pFJw")
         
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        
+        
         // [Optional] Track statistics around application opens.
         //PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         return true
     }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.channels = ["global"]
+        
+        if let currentUser = PFUser.currentUser() {
+            installation["User"] = currentUser
+        }
+        
+        installation.saveInBackground()
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
+    }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

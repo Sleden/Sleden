@@ -93,19 +93,29 @@ class LoggInnViewController: UIViewController, UITextFieldDelegate {
                     
                     AlertView.showAlertWithOKAction(self, title: "Success", message: "Logged Inn", action: alertAction)
                     
+                    self.updateInstallation()
+                    
                 } else {
                     
                     // Gir feilmelding hvis brukernavnet eller passordet er feil.
                     AlertView.showAlertWithOK(self, title: "Invalide", message: "\(error!.localizedDescription)")
                 }
             })
-            
         }
-
-        
-        
-        
     }
+    
+    
+    func updateInstallation() {
+        let installation = PFInstallation.currentInstallation()
+        
+        installation["User"] = PFUser.currentUser()
+        
+        installation.saveInBackground()
+
+    }
+
+    
+    
     
     // Denne har for øyeblikket ingen funksjon, trigger overgangen i Storyboardet!
     @IBAction func registrerButton() {
